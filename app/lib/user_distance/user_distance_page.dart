@@ -38,7 +38,7 @@ class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
             ),
             Container(
                 height: 250,
-                color: Color.fromARGB(255, 176, 205, 235),
+                // color: Color.fromARGB(255, 176, 205, 235),
                 child: GridView.count(
                   crossAxisCount: 2,
                   mainAxisSpacing: 10,
@@ -47,7 +47,7 @@ class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
                   children: [
                     GestureDetector(
                       child: Container(
-                        color: Colors.amber,
+                        //color: Colors.amber,
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -87,7 +87,7 @@ class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
                     ),
                     GestureDetector(
                       child: Container(
-                        color: Color.fromARGB(255, 70, 184, 21),
+                        //color: Color.fromARGB(255, 70, 184, 21),
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -136,7 +136,7 @@ class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
                   padding: EdgeInsets.all(10),
                   children: [
                     Container(
-                      color: Colors.red,
+                      //color: Colors.red,
                       child: Center(
                         child: InkWell(
                             onTap: () {
@@ -178,16 +178,16 @@ class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
                       ),
                     ),
                     Container(
-                      color: Colors.white,
+                      // color: Colors.white,
                       child: Center(),
                     ),
                     Container(
-                      color: Colors.white,
+                      //color: Colors.white,
                       child: Center(),
                     ),
                     GestureDetector(
                       child: Container(
-                        color: Color.fromARGB(255, 212, 10, 188),
+                        // color: Color.fromARGB(255, 212, 10, 188),
                         child: Center(
                           child: Column(
                             children: [
