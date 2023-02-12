@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-
 class UserPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Two Point Distance'),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Distance between Point A and Point B:',
-                style: TextStyle(fontSize: 20),
-              ),
-              Text(
-                calculateDistance().toString() + ' km',
-                style: TextStyle(fontSize: 20),
-              ),
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Two Point Distance'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Distance between Point A and Point B:',
+              style: TextStyle(fontSize: 20),
+            ),
+            Text(
+              calculateDistance().toString() + ' km',
+              style: TextStyle(fontSize: 20),
+            ),
+          ],
         ),
       ),
     );

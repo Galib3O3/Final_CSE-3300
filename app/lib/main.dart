@@ -1,4 +1,4 @@
-import 'package:app/forgate_password/forgatePassword.dart';
+import 'package:app/Services/email_verify/forgate_password/forgatePassword.dart';
 import 'package:app/login_reg/registration.dart';
 import 'package:app/pages/splash.dart';
 import 'package:app/user_distance/user.dart';
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home:UserPage());
+        home: splashS());
   }
 }
  //hello man
