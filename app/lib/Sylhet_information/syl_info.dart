@@ -50,60 +50,60 @@ class Info extends StatelessWidget {
                   ),
                 ],
               ),
-              Column(
-                children: [
-                  SizedBox(height: 15.0),
-                  Card(
-                    child: ListTile(
-                      title: Text(
-                        data["Dokkhin Surma"],
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                        ),
-                      ),
-                      leading: Icon(Icons.location_pin,
-                          size: 40, color: Colors.blue),
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  SizedBox(height: 15.0),
-                  Card(
-                    child: ListTile(
-                      title: Text(
-                        data["Fenchuganj"],
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                        ),
-                      ),
-                      leading: Icon(Icons.location_pin,
-                          size: 40, color: Colors.blue),
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  SizedBox(height: 15.0),
-                  Card(
-                    child: ListTile(
-                      title: Text(
-                        data["Golapgonj"],
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                        ),
-                      ),
-                      leading: Icon(Icons.location_pin,
-                          size: 40, color: Colors.blue),
-                    ),
-                  ),
-                ],
-              ),
+              // Column(
+              //   children: [
+              //     SizedBox(height: 15.0),
+              //     Card(
+              //       child: ListTile(
+              //         title: Text(
+              //           data["Dokkhin Surma"],
+              //           style: TextStyle(
+              //             fontSize: 19,
+              //             color: Colors.black,
+              //           ),
+              //         ),
+              //         leading: Icon(Icons.location_pin,
+              //             size: 40, color: Colors.blue),
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // Column(
+              //   children: [
+              //     SizedBox(height: 15.0),
+              //     Card(
+              //       child: ListTile(
+              //         title: Text(
+              //           data["Fenchuganj"],
+              //           style: TextStyle(
+              //             fontSize: 19,
+              //             color: Colors.black,
+              //           ),
+              //         ),
+              //         leading: Icon(Icons.location_pin,
+              //             size: 40, color: Colors.blue),
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // Column(
+              //   children: [
+              //     SizedBox(height: 15.0),
+              //     Card(
+              //       child: ListTile(
+              //         title: Text(
+              //           data["Golapgonj"],
+              //           style: TextStyle(
+              //             fontSize: 19,
+              //             color: Colors.black,
+              //           ),
+              //         ),
+              //         leading: Icon(Icons.location_pin,
+              //             size: 40, color: Colors.blue),
+              //       ),
+              //     ),
+              //   ],
+              // ),
               Column(
                 children: [
                   SizedBox(height: 15.0),
@@ -140,24 +140,24 @@ class Info extends StatelessWidget {
                   ),
                 ],
               ),
-              Column(
-                children: [
-                  SizedBox(height: 15.0),
-                  Card(
-                    child: ListTile(
-                      title: Text(
-                        data["Osmani Nagar"],
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                        ),
-                      ),
-                      leading: Icon(Icons.location_pin,
-                          size: 40, color: Colors.blue),
-                    ),
-                  ),
-                ],
-              ),
+              // Column(
+              //   children: [
+              //     SizedBox(height: 15.0),
+              //     Card(
+              //       child: ListTile(
+              //         title: Text(
+              //           data["Osmani Nagar"],
+              //           style: TextStyle(
+              //             fontSize: 19,
+              //             color: Colors.black,
+              //           ),
+              //         ),
+              //         leading: Icon(Icons.location_pin,
+              //             size: 40, color: Colors.blue),
+              //       ),
+              //     ),
+              //   ],
+              // ),
               Column(
                 children: [
                   SizedBox(height: 15.0),
@@ -176,24 +176,24 @@ class Info extends StatelessWidget {
                   ),
                 ],
               ),
-              Column(
-                children: [
-                  SizedBox(height: 15.0),
-                  Card(
-                    child: ListTile(
-                      title: Text(
-                        data["Balaganj"],
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                        ),
-                      ),
-                      leading: Icon(Icons.location_pin,
-                          size: 40, color: Colors.blue),
-                    ),
-                  ),
-                ],
-              ),
+              // Column(
+              //   children: [
+              //     SizedBox(height: 15.0),
+              //     Card(
+              //       child: ListTile(
+              //         title: Text(
+              //           data["Balaganj"],
+              //           style: TextStyle(
+              //             fontSize: 19,
+              //             color: Colors.black,
+              //           ),
+              //         ),
+              //         leading: Icon(Icons.location_pin,
+              //             size: 40, color: Colors.blue),
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ],
