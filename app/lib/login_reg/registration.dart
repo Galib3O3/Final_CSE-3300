@@ -1,5 +1,5 @@
 // ignore_for_file: unused_local_variable
-import 'package:app/email_verify/varify_email.dart';
+import 'package:app/Services/email_verify/varify_email.dart';
 import 'package:app/function/user_func.dart';
 import 'package:app/pages/home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -70,7 +70,7 @@ class _regscreenState extends State<regscreen> {
       controller: LnameEditingController,
       keyboardType: TextInputType.emailAddress,
       validator: (Value) {
-         RegExp rgx = new RegExp(r"^[a-zA-Z .-]$");
+        RegExp rgx = new RegExp(r"^[a-zA-Z .-]$");
         if (Value!.isEmpty) {
           return ("Last name required");
         }
@@ -100,10 +100,9 @@ class _regscreenState extends State<regscreen> {
           //regex for mail varification
         }
         //regex for email varifivation
-        if (!RegExp(r"^[a-z0-9]+@ [a-z]+.[a-z]+$")
-            .hasMatch(value)) {
-          return ("Oops! Enter the valid mail");
-        }
+        // if (!RegExp(r"^[a-zA-Z0-9._+@[a-z0-9]+]").hasMatch(value)) {
+        //   return ("Oops! Enter the valid mail");
+        // }
         return null;
       },
       onSaved: (value) {
@@ -126,12 +125,12 @@ class _regscreenState extends State<regscreen> {
       controller: passEditingController,
       keyboardType: TextInputType.emailAddress,
       validator: (Value) {
-        RegExp rgx = new RegExp(r'^.{10,}$');
+        RegExp rgx = new RegExp(r'[a-z+A-Z+0-9+]');
         if (Value!.isEmpty) {
           return ("Password is Required");
         }
         if (!rgx.hasMatch(Value)) {
-          return ("Use valid password \n password contains latters and characters(upto10)");
+          return ("Use valid password \n password contains one upper case one lower case and one special cha and lenght[10-20]");
         }
         return null;
       },
@@ -362,12 +361,12 @@ class _regscreenState extends State<regscreen> {
         .set(userFunc.toMap());
     Fluttertoast.showToast(
         msg: "A verification mail sent to your email address",
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM,
-                    timeInSecForIosWeb: 1,
-                    backgroundColor: Colors.orange,
-                    textColor: Colors.black,
-                    fontSize: 16.0);
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.orange,
+        textColor: Colors.black,
+        fontSize: 16.0);
 
     Navigator.pushAndRemoveUntil(
         (context),

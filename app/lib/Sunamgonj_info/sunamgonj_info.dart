@@ -68,24 +68,24 @@ class Info1 extends StatelessWidget {
                   ),
                 ],
               ),
-              Column(
-                children: [
-                  SizedBox(height: 15.0),
-                  Card(
-                    child: ListTile(
-                      title: Text(
-                        data["jagannathpur"],
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                        ),
-                      ),
-                      leading: Icon(Icons.location_pin,
-                          size: 40, color: Colors.blue),
-                    ),
-                  ),
-                ],
-              ),
+              // Column(
+              //   children: [
+              //     SizedBox(height: 15.0),
+              //     Card(
+              //       child: ListTile(
+              //         title: Text(
+              //           data["jagannathpur"],
+              //           style: TextStyle(
+              //             fontSize: 19,
+              //             color: Colors.black,
+              //           ),
+              //         ),
+              //         leading: Icon(Icons.location_pin,
+              //             size: 40, color: Colors.blue),
+              //       ),
+              //     ),
+              //   ],
+              // ),
               Column(
                 children: [
                   SizedBox(height: 15.0),
@@ -104,24 +104,24 @@ class Info1 extends StatelessWidget {
                   ),
                 ],
               ),
-              Column(
-                children: [
-                  SizedBox(height: 15.0),
-                  Card(
-                    child: ListTile(
-                      title: Text(
-                        data["jamalgonj"],
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                        ),
-                      ),
-                      leading: Icon(Icons.location_pin,
-                          size: 40, color: Colors.blue),
-                    ),
-                  ),
-                ],
-              ),
+              // Column(
+              //   children: [
+              //     SizedBox(height: 15.0),
+              //     Card(
+              //       child: ListTile(
+              //         title: Text(
+              //           data["jamalgonj"],
+              //           style: TextStyle(
+              //             fontSize: 19,
+              //             color: Colors.black,
+              //           ),
+              //         ),
+              //         leading: Icon(Icons.location_pin,
+              //             size: 40, color: Colors.blue),
+              //       ),
+              //     ),
+              //   ],
+              // ),
               Column(
                 children: [
                   SizedBox(height: 15.0),

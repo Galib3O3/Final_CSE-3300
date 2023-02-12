@@ -1,4 +1,4 @@
-import 'package:app/forgate_password/forgatePassword.dart';
+import 'package:app/Services/email_verify/forgate_password/forgatePassword.dart';
 import 'package:app/pages/home.dart';
 import 'package:app/login_reg/registration.dart';
 import 'package:firebase_auth/firebase_auth.dart';

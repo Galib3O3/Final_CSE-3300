@@ -1,4 +1,4 @@
-import 'package:app/forgate_password/forgatePassword.dart';
+import 'package:app/Services/email_verify/forgate_password/forgatePassword.dart';
 import 'package:app/login_reg/registration.dart';
 import 'package:app/pages/splash.dart';
 
@@ -21,14 +21,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Save Community',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      //home:UserPage(),
-      home: UserDistanceProfilePage(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Save Community',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: splashS());
   }
 }
  //hello man
