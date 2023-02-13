@@ -7,6 +7,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'app/profile-pages/six_profile_page.dart';
+import 'new_volunteer/volunteer.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding();
   await Firebase.initializeApp();
@@ -26,7 +29,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: UserDistanceProfilePage());
+        home: SixProfileView());
   }
 }
  //hello man
