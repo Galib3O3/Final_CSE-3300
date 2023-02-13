@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../Dontaion/donation.dart';
+import '../../weather-parts/main-page/district-profile.dart';
 
 class SixProfileView extends StatefulWidget {
   SixProfileView({super.key});
@@ -70,7 +71,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                     ],
                   ),
                   onTap: () {
-                    //Get.to(() => WeatherMainPageView());
+                    Get.to(() => DistrictGridPage());
                   }),
               GestureDetector(
                   child: Column(

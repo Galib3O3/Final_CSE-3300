@@ -43,62 +43,59 @@ class _copyMainFileState extends State<copyMainFile> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFf9f9f9),
-      appBar: AppBar(
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: const Color(0xFFf9f9f9),
-        elevation: 0.0,
-        title: const Text(
-          "Live Weather",
-          style: TextStyle(color: Colors.black),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFf9f9f9),
+          elevation: 0.0,
+          title: const Text(
+            "Live Weather",
+            style: TextStyle(color: Colors.black),
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.menu),
-          color: Colors.black,
+        body: FutureBuilder(
+          future: getData(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              //here we will display our data
+              return Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    currentWeather(Icons.wb_sunny_rounded, "${data!.temp} °C",
+                        "${data!.cityName}"),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Text("Additional information about Weather ",
+                        style: TextStyle(fontSize: 18)),
+                    const Divider(
+                      height: 10,
+                    ),
+                    additionalInformation(
+                        "${data!.wind}",
+                        "${data!.humidity}",
+                        "${data!.pressure}",
+                        "${data!.feels_like}",
+                        "${data!.id}"),
+
+                    clickMe("${data!.id}")
+
+                    // now API Connections Established
+                  ]);
+            } else if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            } else if (snapshot.connectionState == ConnectionState.none) {
+              return const Center(
+                child: Text("Mising weather"),
+              );
+            }
+            return Container();
+          },
         ),
-      ),
-      body: FutureBuilder(
-        future: getData(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            //here we will display our data
-            return Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  currentWeather(Icons.wb_sunny_rounded, "${data!.temp} °C",
-                      "${data!.cityName}"),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const Text("Additional information about Weather ",
-                      style: TextStyle(fontSize: 21)),
-                  const Divider(
-                    height: 10,
-                  ),
-                  additionalInformation(
-                      "${data!.wind}",
-                      "${data!.humidity}",
-                      "${data!.pressure}",
-                      "${data!.feels_like}",
-                      "${data!.id}"),
-
-                  clickMe("${data!.id}")
-
-                  // now API Connections Established
-                ]);
-          } else if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          } else if (snapshot.connectionState == ConnectionState.none) {
-            return const Center(
-              child: Text("Misi weather"),
-            );
-          }
-          return Container();
-        },
       ),
     );
   }
@@ -109,6 +106,14 @@ Widget clickMe(dynamic data) {
     height: 80,
     width: 250,
     child: ElevatedButton(
+      style: ButtonStyle(
+        side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
+          if (states.contains(MaterialState.hovered)) {
+            return const BorderSide(color: Color.fromARGB(202, 54, 244, 139));
+          }
+          return null; // Defer to default value on the theme or widget.
+        }),
+      ),
       child: Text("Click For Safety"),
       onPressed: () {
         print(" i am here ${data}");

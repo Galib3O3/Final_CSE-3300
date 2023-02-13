@@ -48,7 +48,7 @@ Widget additionalInformation(String wind, String humidity, String pressure,
                       height: 20,
                     ),
                     Text(
-                      "ID  ",
+                      "Status ID  ",
                       style: titleFont,
                     ),
                     SizedBox(

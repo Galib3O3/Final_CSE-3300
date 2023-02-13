@@ -6,10 +6,13 @@ Widget currentWeather(IconData icon, String temp, String location) {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        SizedBox(
+          height: 40,
+        ),
         Icon(
           icon,
           color: Colors.orange,
-          size: 64.0,
+          size: 74.0,
         ),
         SizedBox(
           height: 10,
@@ -26,7 +29,7 @@ Widget currentWeather(IconData icon, String temp, String location) {
           style: TextStyle(fontSize: 26),
         ),
         Divider(),
-        SizedBox(height: 20.0),
+        //SizedBox(height: 20.0),
 
         //Now create addidtional infromation widegts
         // first create model that soret the data

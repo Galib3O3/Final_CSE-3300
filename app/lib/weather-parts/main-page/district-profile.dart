@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -26,42 +25,60 @@ class _DistrictGridPageState extends State<DistrictGridPage> {
               },
               icon: Icon(Icons.exit_to_app))
         ],
-        title: Text("Sylhet Division"),
+        title: Text(
+          "   Sylhet Division",
+          textAlign: TextAlign.center,
+        ),
         backgroundColor: Color.fromARGB(255, 71, 233, 248),
       ),
       body: Center(
           child: Column(
         children: [
           SizedBox(
-            height: 100,
+            height: 80,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Select One ",
+                style: TextStyle(fontSize: 25),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 30,
           ),
           // ignore: unnecessary_new
           Expanded(
             child: GridView.extent(
               primary: false,
-              padding: const EdgeInsets.all(14),
+              padding: const EdgeInsets.all(16),
               crossAxisSpacing: 15,
               mainAxisSpacing: 40,
-              maxCrossAxisExtent: 200.0,
+              maxCrossAxisExtent: 180.0,
               children: <Widget>[
                 GestureDetector(
-                  child: Container(
-                    height: 100,
-                    width: 1000,
-                    padding: const EdgeInsets.all(18),
-                    alignment: Alignment.center,
-                    // decoration: const BoxDecoration(
-                    //   image: DecorationImage(
-                    //     image: AssetImage("images/haze.png"),
-                    //     fit: BoxFit.cover,
-                    //     repeat: ImageRepeat.noRepeat,
-                    //   ),
-                    // ),
-                    color: (Colors.amber),
-                    child: Text(
-                      "Sylhet",
-                      style: TextStyle(fontSize: 18),
-                    ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 150,
+                        width: 180,
+                        padding: const EdgeInsets.all(8),
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/zila-icon/sylhet.jpg"),
+                            fit: BoxFit.cover,
+                            repeat: ImageRepeat.noRepeat,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "Sylhet",
+                        style: TextStyle(fontSize: 18),
+                      )
+                    ],
                   ),
                   onTap: () {
                     Get.to(() => copyMainFile(),
@@ -69,16 +86,25 @@ class _DistrictGridPageState extends State<DistrictGridPage> {
                   },
                 ),
                 GestureDetector(
-                  child: Container(
-                    height: 100,
-                    width: 1000,
-                    padding: const EdgeInsets.all(8),
-                    alignment: Alignment.center,
-                    color: (Colors.amber),
-                    child: Text(
-                      "Habiganj",
-                      style: TextStyle(fontSize: 18),
-                    ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 150,
+                        width: 180,
+                        padding: const EdgeInsets.all(8),
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/zila-icon/hobiganj.jpg"),
+                            fit: BoxFit.cover,
+                            repeat: ImageRepeat.noRepeat,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "Habiganj",
+                        style: TextStyle(fontSize: 18),
+                      )
+                    ],
                   ),
                   onTap: () {
                     Get.to(() => copyMainFile(),
@@ -86,16 +112,25 @@ class _DistrictGridPageState extends State<DistrictGridPage> {
                   },
                 ),
                 GestureDetector(
-                  child: Container(
-                    height: 100,
-                    width: 1000,
-                    padding: const EdgeInsets.all(8),
-                    alignment: Alignment.center,
-                    color: (Colors.amber),
-                    child: Text(
-                      "Sunamganj",
-                      style: TextStyle(fontSize: 18),
-                    ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 150,
+                        width: 180,
+                        padding: const EdgeInsets.all(8),
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/zila-icon/sunamganj.jpg"),
+                            fit: BoxFit.cover,
+                            repeat: ImageRepeat.noRepeat,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "Sunamganj",
+                        style: TextStyle(fontSize: 18),
+                      )
+                    ],
                   ),
                   onTap: () {
                     Get.to(() => copyMainFile(),
@@ -103,16 +138,26 @@ class _DistrictGridPageState extends State<DistrictGridPage> {
                   },
                 ),
                 GestureDetector(
-                  child: Container(
-                    height: 100,
-                    width: 1000,
-                    padding: const EdgeInsets.all(8),
-                    alignment: Alignment.center,
-                    color: (Colors.amber),
-                    child: Text(
-                      "Moulvibazar",
-                      style: TextStyle(fontSize: 18),
-                    ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 150,
+                        width: 180,
+                        padding: const EdgeInsets.all(8),
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image:
+                                AssetImage("assets/zila-icon/moulvibazar.jpg"),
+                            fit: BoxFit.cover,
+                            repeat: ImageRepeat.noRepeat,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "MoulviBazar",
+                        style: TextStyle(fontSize: 18),
+                      )
+                    ],
                   ),
                   onTap: () {
                     Get.to(() => copyMainFile(),
@@ -122,11 +167,6 @@ class _DistrictGridPageState extends State<DistrictGridPage> {
               ],
             ),
           ),
-
-          ElevatedButton(onPressed: () {}, child: Text("Log out")),
-          SizedBox(
-            height: 20,
-          )
         ],
       )),
       backgroundColor: Color.fromARGB(248, 245, 245, 245),
