@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:app/Dontaion/donation1.dart';
 import 'package:app/LocationAndVolunterrs/SylhetRegion.dart';
 import 'package:app/about_us/about_us.dart';
+import 'package:app/app/profile-pages/liveChatADH/livechat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -158,20 +159,21 @@ class _SixProfileViewState extends State<SixProfileView> {
                         padding: const EdgeInsets.all(8),
                         decoration: const BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage("assets/news_portal.png"),
+                            image: AssetImage("assets/LC.png"),
                             fit: BoxFit.cover,
                             repeat: ImageRepeat.noRepeat,
                           ),
                         ),
                       ),
                       Text(
-                        "News Portal",
+                        "Live Chat",
                         style: TextStyle(fontSize: 18),
                       )
                     ],
                   ),
                   onTap: () {
                     setState(() {
+                      Get.to(livecaht());
                       //Get.to(MyHomePage(title: 'Flutter Demo Home Page'));
                     });
                   }),

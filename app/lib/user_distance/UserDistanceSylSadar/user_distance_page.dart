@@ -2,20 +2,20 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'method-user-volenteer.dart';
+import '../UserDistanceMethod/method-user-volenteer.dart';
 
-class UserDistanceProfilePage extends StatefulWidget {
+class UserDistanceProfilePage_SYL extends StatefulWidget {
   @override
-  State<UserDistanceProfilePage> createState() =>
-      _UserDistanceProfilePageState();
+  State<UserDistanceProfilePage_SYL> createState() =>
+      _UserDistanceProfilePage_SYLState();
 }
 
-class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
+class _UserDistanceProfilePage_SYLState
+    extends State<UserDistanceProfilePage_SYL> {
   List saveSylhet = [24.8945, 91.8673];
-  List salutikorBazar = [24.9931, 91.8471];
-  List gowainghat = [25.0936, 91.9834]; //
-  List user1LatLon = [25.1634, 92.0175]; //jaflong
-  List user2LatLon = [25.1691, 91.8955]; //Bisnakand, Bangladesh
+  List salutikorBazar = [24.99341, 91.84922];
+  List user1LatLon = [25.17526, 92.01496]; //jaflong
+  List user2LatLon = [25.170575, 91.88965]; //Bisnakand
 
   dynamic _distanc1, _distanc2, discollect1, discollect2;
 
@@ -56,11 +56,12 @@ class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
                               ),
                               Icon(
                                 Icons.man_2_sharp,
+                                color: Colors.blueAccent,
                                 size: 64,
                               ),
                               Text("Jaflong"),
                               Divider(),
-                              Text("lat: 25.1634 \nlon: 92.0175 "),
+                              Text("lat: 25.17526 \nlon: 92.01496 "),
                               //  List user1LatLon = []; //
                             ]),
                       ),
@@ -69,8 +70,8 @@ class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
                             DistanceUserVolenmCalculator.calculateDistance(
                                 user1LatLon[0],
                                 user1LatLon[1],
-                                gowainghat[0],
-                                gowainghat[1]);
+                                salutikorBazar[0],
+                                salutikorBazar[1]);
                         discollect1 =
                             DistanceUserVolenmCalculator.calculateDistance(
                           user1LatLon[0],
@@ -96,6 +97,7 @@ class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
                               ),
                               Icon(
                                 Icons.man_2_sharp,
+                                color: Colors.blueAccent,
                                 size: 64,
                               ),
                               Text("Bisnakand"),
@@ -109,8 +111,8 @@ class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
                             DistanceUserVolenmCalculator.calculateDistance(
                                 user2LatLon[0],
                                 user2LatLon[1],
-                                gowainghat[0],
-                                gowainghat[1]);
+                                salutikorBazar[0],
+                                salutikorBazar[1]);
                         discollect1 =
                             DistanceUserVolenmCalculator.calculateDistance(
                           user2LatLon[0],
@@ -150,6 +152,7 @@ class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
                                 ),
                                 Icon(
                                   Icons.volunteer_activism,
+                                  color: Colors.blueAccent,
                                   size: 60,
                                 ),
                                 SizedBox(
@@ -196,6 +199,7 @@ class _UserDistanceProfilePageState extends State<UserDistanceProfilePage> {
                               ),
                               Icon(
                                 Icons.volunteer_activism,
+                                color: Colors.blueAccent,
                                 size: 60,
                               ),
                               SizedBox(
