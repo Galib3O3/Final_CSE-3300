@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../UserDistanceMethod/method-user-volenteer.dart';
+import '../../UserDistanceMethod/method-user-volenteer.dart';
 
 class UserDistanceProfilePage_Companigonj extends StatefulWidget {
   @override

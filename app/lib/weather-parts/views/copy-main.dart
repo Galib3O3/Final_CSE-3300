@@ -54,6 +54,16 @@ class _copyMainFileState extends State<copyMainFile> {
             style: TextStyle(color: Colors.black),
           ),
           centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.blue,
+            ),
+            onPressed: () {
+              //go to login section
+              Navigator.of(context).pop();
+            },
+          ),
         ),
         body: FutureBuilder(
           future: getData(),

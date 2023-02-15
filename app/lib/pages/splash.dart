@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'package:app/app/profile-pages/six_profile_page.dart';
 import 'package:app/pages/home.dart';
 import 'package:app/login_reg/login.dart';
+import 'package:app/profile.dart';
 import 'package:app/welcomeScreen/welcomeScreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -34,7 +36,7 @@ class _splashSState extends State<splashS> {
                               .snapshots(),
                           builder: (context, snapshot) {
                             if (snapshot.hasData) {
-                              return home();
+                              return SixProfileView();
                             } else {
                               return const Center(
                                 child: CircularProgressIndicator(),

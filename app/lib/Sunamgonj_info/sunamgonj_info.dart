@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../user_distance/SunamganjDistancePage/dirai-sunamganj-volunteer.dart';
 import '../user_distance/SunamganjDistancePage/tahirpur-sunamganj-volunter.dart';
 import '../user_distance/SunamganjDistancePage/userDistanceProfileSunamganj.dart';
-import '../user_distance/UserDistanceSylSadar/user_distance_page.dart';
+import '../user_distance/UserDistanceSylhet/UserDistanceSylSadar/user_distance_page.dart';
 
 class Info1 extends StatelessWidget {
   final data;

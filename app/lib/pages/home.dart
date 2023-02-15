@@ -77,7 +77,7 @@ class _homeState extends State<home> {
               ActionChip(
                   label: const Text("Logout"),
                   onPressed: () {
-                    logut(context);
+                    logout(context);
                   }),
               ElevatedButton(
                   onPressed: () {
@@ -91,7 +91,7 @@ class _homeState extends State<home> {
     );
   }
 
-  Future<void> logut(BuildContext context) async {
+  Future<void> logout(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
 
     Navigator.of(context).pushReplacement(

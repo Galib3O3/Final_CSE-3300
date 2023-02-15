@@ -3,11 +3,13 @@ import 'package:app/Dontaion/donation1.dart';
 import 'package:app/LocationAndVolunterrs/SylhetRegion.dart';
 import 'package:app/about_us/about_us.dart';
 import 'package:app/app/profile-pages/liveChatADH/livechat.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../Dontaion/donation.dart';
+import '../../login_reg/login.dart';
 import '../../weather-parts/main-page/district-profile.dart';
 
 class SixProfileView extends StatefulWidget {
@@ -206,7 +208,11 @@ class _SixProfileViewState extends State<SixProfileView> {
                   }),
             ],
           )),
-          ElevatedButton(onPressed: () {}, child: Text("Log out")),
+          ElevatedButton(
+              onPressed: () {
+                logout(context);
+              },
+              child: Text("Log out")),
           SizedBox(
             height: 20,
           )
@@ -214,5 +220,12 @@ class _SixProfileViewState extends State<SixProfileView> {
       )),
       backgroundColor: Color.fromARGB(248, 245, 245, 245),
     );
+  }
+
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const loginscreen()));
   }
 }

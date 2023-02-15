@@ -29,7 +29,7 @@ class _DistrictGridPageState extends State<DistrictGridPage> {
           "   Sylhet Division",
           textAlign: TextAlign.center,
         ),
-        backgroundColor: Color.fromARGB(255, 71, 233, 248),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Center(
           child: Column(
