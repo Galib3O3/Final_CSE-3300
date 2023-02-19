@@ -261,13 +261,13 @@ class _SixProfileViewState extends State<SixProfileView> {
                     fontSize: 20,
                   )),
             ),
-            // ListTile(
-            //   title: const Text('Profile '),
-            //   onTap: () {
-            //     Navigator.of(context).pushReplacement(
-            //         MaterialPageRoute(builder: (context) => ProfilePage()));
-            //   },
-            // ),
+            ListTile(
+              title: const Text('Profile '),
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => ProfilePage()));
+              },
+            ),
             ListTile(
               title: const Text('Logout'),
               onTap: () {

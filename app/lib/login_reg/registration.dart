@@ -366,9 +366,9 @@ class _regscreenState extends State<regscreen> {
         textColor: Colors.black,
         fontSize: 16.0);
 
-    // Navigator.pushAndRemoveUntil(
-    //     (context),
-    //     MaterialPageRoute(builder: (context) =>ProfilePage()),
-    //     (route) => false);
+    Navigator.pushAndRemoveUntil(
+        (context),
+        MaterialPageRoute(builder: (context) =>ProfilePage()),
+        (route) => false);
   }
 }
