@@ -55,7 +55,7 @@ class _regscreenState extends State<regscreen> {
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
           prefixIcon: const Icon(Icons.people),
-          contentPadding:const EdgeInsets.fromLTRB(20, 15, 20, 15),
+          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "First Name",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -66,7 +66,7 @@ class _regscreenState extends State<regscreen> {
     final LnameField = TextFormField(
       autofocus: false,
       controller: LnameEditingController,
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: TextInputType.name,
       validator: (Value) {
         RegExp rgx = new RegExp(r"^[a-zA-Z .-]$");
         if (Value!.isEmpty) {
@@ -92,15 +92,15 @@ class _regscreenState extends State<regscreen> {
       autofocus: false,
       controller: EmailEditingController,
       keyboardType: TextInputType.emailAddress,
-      validator: (value) {
-        if (value!.isEmpty) {
-          return ("Email Required");
-          //regex for mail varification
+      validator: (Value) {
+        RegExp rgx = new RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+
+        if (Value!.isEmpty) {
+          return ("Email can't be empty");
         }
-        //regex for email varifivation
-        // if (!RegExp(r"^[a-zA-Z0-9._+@[a-z0-9]+]").hasMatch(value)) {
-        //   return ("Oops! Enter the valid mail");
-        // }
+        if (!rgx.hasMatch(Value)) {
+          return ("Enter valid Email ");
+        }
         return null;
       },
       onSaved: (value) {
@@ -123,12 +123,12 @@ class _regscreenState extends State<regscreen> {
       controller: passEditingController,
       keyboardType: TextInputType.emailAddress,
       validator: (Value) {
-        RegExp rgx = new RegExp(r'[a-z+A-Z+0-9+]');
+        RegExp rgx = new RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$');
         if (Value!.isEmpty) {
           return ("Password is Required");
         }
         if (!rgx.hasMatch(Value)) {
-          return ("Use valid password \n password contains one upper case one lower case and one special cha and lenght[10-20]");
+          return ("contains at least one letter, at least one digit, \nand is at least 8 characters long. The password can contain only letters and digits.");
         }
         return null;
       },
@@ -156,7 +156,7 @@ class _regscreenState extends State<regscreen> {
     //Confirm Password
     final CpassnameField = TextFormField(
       autofocus: false,
-      obscureText: hidepass,
+      obscureText: hidepass, //!this.
       controller: CpassEditingController,
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
@@ -368,7 +368,7 @@ class _regscreenState extends State<regscreen> {
 
     Navigator.pushAndRemoveUntil(
         (context),
-        MaterialPageRoute(builder: (context) =>ProfilePage()),
+        MaterialPageRoute(builder: (context) => ProfilePage()),
         (route) => false);
   }
 }
