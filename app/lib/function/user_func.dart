@@ -5,14 +5,14 @@ class UserFunc {
   String? firstName;
   String? lastName;
   String? password;
-  String? role;
+  //String? role;
   UserFunc({
     this.uid,
     this.email,
     this.firstName,
     this.lastName,
     this.password,
-    this.role,
+   // this.role,
   });
 //data fetch server
   factory UserFunc.fromMap(map) {
@@ -22,7 +22,7 @@ class UserFunc {
       firstName: map['firstName'],
       lastName: map['lastName'],
       password: map['password'],
-      role: map['role'],
+      //role: map['role'],
     );
   }
   //data pass server
@@ -34,7 +34,7 @@ class UserFunc {
       'firstName': firstName,
       'lastName': lastName,
       'password': password,
-      'role': role,
+      //'role': role,
     };
   }
 }

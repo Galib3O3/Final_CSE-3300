@@ -1,11 +1,10 @@
-import 'dart:math';
-
 import 'package:app/Services/email_verify/forgate_password/forgatePassword.dart';
 import 'package:app/app/profile-pages/liveChatADH/livechat.dart';
 import 'package:app/login_reg/login.dart';
 import 'package:app/login_reg/registration.dart';
 import 'package:app/pages/splash.dart';
-import 'package:app/profile.dart';
+
+import 'package:app/profilepage/profile.dart';
 
 import 'package:app/user_distance/UserDistanceSylhet/UserDistanceSylSadar/user_distance_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: splashS());
+        home: ProfilePage());
   }
 }
  //hello man

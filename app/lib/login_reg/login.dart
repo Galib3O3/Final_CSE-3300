@@ -1,7 +1,7 @@
 import 'package:app/Services/email_verify/forgate_password/forgatePassword.dart';
 import 'package:app/pages/home.dart';
 import 'package:app/login_reg/registration.dart';
-import 'package:app/profile.dart';
+import 'package:app/profilepage/profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -215,7 +215,7 @@ class _loginscreenState extends State<loginscreen> {
                     textColor: Colors.white,
                     fontSize: 16.0),
                 Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => SixProfileView())),
+                    MaterialPageRoute(builder: (context) =>const SixProfileView())),
                 // Get.to(home(), binding: null),
               })
           .catchError((err) {

@@ -74,8 +74,18 @@ flutter:
   assets:
     - img/sv.png
     - img/fundsv.png
-    - assets/
-  
+    - assets/zila-icon/sylhet.jpg
+    - assets/zila-icon/hobiganj.jpg
+    - assets/zila-icon/sunamganj.jpg
+    - assets/zila-icon/moulvibazar.jpg
+    - assets/clear-image/clear-1.png
+    - assets/clear-image/clear-2.jpg
+    - assets/clear-image/clear-3.png
+    - assets/thundesome-image/thudersome-1.jpg
+    - assets/thundesome-image/thudersome-2.jpg
+    - assets/thundesome-image/thudersome-3.jpg
+    - assets/thundesome-image/thudersome-4.png
+    - assets/thundesome-image/thudersome-5.jpg
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

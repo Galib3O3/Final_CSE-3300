@@ -1,7 +1,5 @@
-// ignore_for_file: unused_local_variable
-import 'package:app/Services/email_verify/varify_email.dart';
 import 'package:app/function/user_func.dart';
-import 'package:app/pages/home.dart';
+import 'package:app/profilepage/profile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -56,8 +54,8 @@ class _regscreenState extends State<regscreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.people),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          prefixIcon: const Icon(Icons.people),
+          contentPadding:const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "First Name",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -360,7 +358,7 @@ class _regscreenState extends State<regscreen> {
         .doc(Users.uid)
         .set(userFunc.toMap());
     Fluttertoast.showToast(
-        msg: "A verification mail sent to your email address",
+        msg: "Registration Successfully completed",
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 1,
@@ -368,9 +366,9 @@ class _regscreenState extends State<regscreen> {
         textColor: Colors.black,
         fontSize: 16.0);
 
-    Navigator.pushAndRemoveUntil(
-        (context),
-        MaterialPageRoute(builder: (context) => const verify_emailScreen()),
-        (route) => false);
+    // Navigator.pushAndRemoveUntil(
+    //     (context),
+    //     MaterialPageRoute(builder: (context) =>ProfilePage()),
+    //     (route) => false);
   }
 }
