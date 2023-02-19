@@ -144,7 +144,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                   ),
                   onTap: () {
                     setState(() {
-                      Get.to(get_d());
+                      Get.to(SylhetRegion());
                     });
                   }),
               GestureDetector(

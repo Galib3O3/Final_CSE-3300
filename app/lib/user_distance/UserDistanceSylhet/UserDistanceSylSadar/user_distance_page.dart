@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:app/Sylhet_information/syl_info.dart';
+import 'package:app/app/profile-pages/six_profile_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../UserDistanceMethod/method-user-volenteer.dart';
@@ -43,7 +45,7 @@ class _UserDistanceProfilePage_SYLState
                   crossAxisCount: 2,
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   children: [
                     GestureDetector(
                       child: Container(
