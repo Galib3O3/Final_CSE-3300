@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'dart:io';
+
+import '../LocationAndVolunterrs/SylhetRegion.dart';
 
 class NewVolunteerFromPage extends StatefulWidget {
   const NewVolunteerFromPage({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _NewVolunteerFromPageState extends State<NewVolunteerFromPage> {
 
   void _uploadData() {
     FirebaseFirestore.instance
-        .collection('data')
+        .collection('NewVolunteer')
         .add({'name': _name, 'id': _id, 'phone': _phoneNo});
   }
 
@@ -30,21 +31,21 @@ class _NewVolunteerFromPageState extends State<NewVolunteerFromPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('Volunteer Form')),
+        title: const Center(child: Text('Volunteer Form')),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
             color: Color.fromARGB(255, 0, 0, 0),
           ),
           onPressed: () {
-            //go to login section
-            Navigator.of(context).pop();
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => SylhetRegion()));
           },
         ),
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             // crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,37 +57,37 @@ class _NewVolunteerFromPageState extends State<NewVolunteerFromPage> {
                   fit: BoxFit.contain,
                 ),
               ),
-              Divider(
+              const Divider(
                   // color: Colors.blue,
                   ),
-              Text(""),
+              const Text(""),
               TextFormField(
-                decoration: InputDecoration(hintText: 'Name'),
+                decoration: const InputDecoration(hintText: 'Name'),
                 onChanged: (value) {
                   _name = value;
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               TextFormField(
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(hintText: 'NID/Birth_ID'),
+                decoration: const InputDecoration(hintText: 'NID/Birth_ID'),
                 onChanged: (value) {
                   _id = value;
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               TextFormField(
                 keyboardType: TextInputType.phone,
-                decoration: InputDecoration(hintText: 'Phone No'),
+                decoration: const InputDecoration(hintText: 'Phone No'),
                 onChanged: (value) {
                   _phoneNo = value;
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               // Center(
@@ -102,12 +103,12 @@ class _NewVolunteerFromPageState extends State<NewVolunteerFromPage> {
               //   onPressed: _getImage,
               //   child: Text('Pick Image'),
               // ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               ElevatedButton(
                 onPressed: _uploadData,
-                child: Text('Upload'),
+                child: const Text('Upload'),
               ),
             ],
           ),

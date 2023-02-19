@@ -8,15 +8,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../Sylhet_information/syl_info.dart';
+import '../new_volunteer/volunteer.dart';
 
-class get_d extends StatefulWidget {
-  const get_d({super.key});
+class SylhetRegion extends StatefulWidget {
+  const SylhetRegion({super.key});
 
   @override
-  State<get_d> createState() => _get_dState();
+  State<SylhetRegion> createState() => _SylhetRegionState();
 }
 
-class _get_dState extends State<get_d> {
+class _SylhetRegionState extends State<SylhetRegion> {
   final CollectionReference firebase =
       FirebaseFirestore.instance.collection("sylhet");
 
@@ -92,6 +93,44 @@ class _get_dState extends State<get_d> {
                                   ),
                                   subtitle: Text("upozilla's"),
                                   leading: Icon(Icons.location_pin,
+                                      size: 40, color: Colors.blue),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const NewVolunteerFromPage()));
+                          },
+                          child: Column(
+                            children: const [
+                              SizedBox(
+                                height: 10.0,
+                                width: 10.0,
+                              ),
+                              Divider(
+                                height: 30,
+                              ),
+                              Card(
+                                child: ListTile(
+                                  title: Text(
+                                    "Volunteer",
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  subtitle: Text("Add new Volunteer"),
+                                  leading: Icon(Icons.people_alt,
                                       size: 40, color: Colors.blue),
                                 ),
                               ),
