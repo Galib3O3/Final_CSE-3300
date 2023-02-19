@@ -1,10 +1,10 @@
 import 'dart:math';
 
-import 'package:app/Sylhet_information/syl_info.dart';
+import 'package:app/user_distance/app/views/District-information/Sylhet_information/syl_info.dart';
 import 'package:app/app/profile-pages/six_profile_page.dart';
 import 'package:flutter/material.dart';
 
-import '../../UserDistanceMethod/method-user-volenteer.dart';
+import '../../../model/user-volenteer-method-.dart';
 
 class UserDistanceProfilePage_SYL extends StatefulWidget {
   @override

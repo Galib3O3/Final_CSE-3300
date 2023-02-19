@@ -2,20 +2,20 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../UserDistanceMethod/method-user-volenteer.dart';
+import '../../model/user-volenteer-method-.dart';
 
-class UserDistanceProfilePage_tahirpur extends StatefulWidget {
+class UserDistanceProfilePage_dirai extends StatefulWidget {
   @override
-  State<UserDistanceProfilePage_tahirpur> createState() =>
-      _UserDistanceProfilePage_tahirpurState();
+  State<UserDistanceProfilePage_dirai> createState() =>
+      _UserDistanceProfilePage_diraiState();
 }
 
-class _UserDistanceProfilePage_tahirpurState
-    extends State<UserDistanceProfilePage_tahirpur> {
+class _UserDistanceProfilePage_diraiState
+    extends State<UserDistanceProfilePage_dirai> {
   List saveSunamganj = [25.0668, 91.4073];
-  List tahirpurSP = [25.0994, 91.1787];
-  List user1LatLon = [25.0982, 91.1796]; // Tahirpur GSC
-  List user2LatLon = [25.0982, 91.1796]; // Tahirpur GSC,
+  List bdrcs = [25.0699, 91.3998];
+  List user1LatLon = [24.7940, 91.3706]; // karimpur Mosjid
+  List user2LatLon = [24.7910, 91.3474]; // Dirai G college,
   dynamic _distanc1, _distanc2, discollect1, discollect2;
 
   @override
@@ -27,7 +27,7 @@ class _UserDistanceProfilePage_tahirpurState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("T A H I R P U R"),
+        title: Text("D I R A I"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -69,10 +69,10 @@ class _UserDistanceProfilePage_tahirpurState
                                 Icons.man_2_sharp,
                                 size: 64,
                               ),
-                              Text("Tahirpur Students P"),
+                              Text("Dirai G college"),
                               Divider(),
-                              Text("lat lon 25.0994, 91.1787"),
-                              //List tahirpurSP = [];
+                              Text("lat lon 24.7910, 91.3474 "),
+                              //[]; //
                             ]),
                       ),
                       onTap: () {
@@ -80,8 +80,8 @@ class _UserDistanceProfilePage_tahirpurState
                             DistanceUserVolenmCalculator.calculateDistance(
                                 user2LatLon[0],
                                 user2LatLon[1],
-                                tahirpurSP[0],
-                                tahirpurSP[1]);
+                                bdrcs[0],
+                                bdrcs[1]);
                         discollect1 =
                             DistanceUserVolenmCalculator.calculateDistance(
                           user2LatLon[0],
@@ -175,9 +175,9 @@ class _UserDistanceProfilePage_tahirpurState
                                 height: 20,
                               ),
 
-                              Text("lat lon 25.0982, 91.1796 "),
+                              Text("lat lon 25.0699, 91.3998 "),
                               //salutikorBazar = [];
-                              Text(" Team : Tahirpur Students P"),
+                              Text(" Team : B D R C S"),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [

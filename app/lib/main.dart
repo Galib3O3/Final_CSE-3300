@@ -6,7 +6,7 @@ import 'package:app/pages/splash.dart';
 
 import 'package:app/profilepage/profile.dart';
 
-import 'package:app/user_distance/UserDistanceSylhet/UserDistanceSylSadar/user_distance_page.dart';
+import 'package:app/user_distance/app/views/UserDistanceSylhet/UserDistanceSylSadar/user_distance_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

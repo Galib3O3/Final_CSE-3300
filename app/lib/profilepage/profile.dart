@@ -24,36 +24,34 @@ class _ProfilePageState extends State<ProfilePage> {
         }),
         title: Text("Profile"),
       ),
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Color.fromARGB(199, 68, 202, 255),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            // decoration: const BoxDecoration(
-            //     gradient: LinearGradient(
-            //         begin: Alignment.topLeft,
-            //         end: Alignment.bottomRight,
-            //         colors: [
-            //       Color.fromARGB(255, 74, 69, 234),
-            //       Color.fromARGB(255, 139, 65, 217)
-            //     ])),
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 200),
-            child: SingleChildScrollView(
+          SingleChildScrollView(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Column(
                 children: [
+                  SizedBox(
+                    height: 130,
+                  ),
                   const Icon(
                     Icons.account_circle,
                     size: 100,
                     color: Colors.black,
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 40,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        "Name - ",
-                        style: TextStyle(fontSize: 15),
+                        "Name  :",
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
                       ),
                       Text("${loggedUser.firstName} ${loggedUser.lastName}",
                           style: const TextStyle(
@@ -62,14 +60,14 @@ class _ProfilePageState extends State<ProfilePage> {
                     ],
                   ),
                   const Divider(
-                    height: 15,
+                    height: 20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        "Email -",
-                        style: TextStyle(fontSize: 15),
+                        "Email  :",
+                        style: TextStyle(fontSize: 16),
                       ),
                       Text("${loggedUser.email}",
                           style: const TextStyle(
@@ -78,21 +76,33 @@ class _ProfilePageState extends State<ProfilePage> {
                     ],
                   ),
                   const SizedBox(
-                    height: 62,
+                    height: 150,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       user!.emailVerified
-                          ? const Text("Verified")
+                          ? Container(
+                              height: 40,
+                              width: 100,
+                              color: Color.fromARGB(255, 26, 226, 59),
+                              child: const Text(
+                                "Verified",
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 200, 10, 229),
+                                    fontSize: 24),
+                                textAlign: TextAlign.center,
+                              ),
+                            )
                           : TextButton(
                               onPressed: () {
                                 verifymail();
                               },
                               child: const Text(
                                 "Verify mail",
-                                style: TextStyle(color: Colors.black),
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 181, 13, 13)),
                               ),
                             ),
                     ],

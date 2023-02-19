@@ -1,8 +1,8 @@
-import 'package:app/user_distance/UserDistanceSylhet/UserDistanceCompaniganj/user_distance_page_comp.dart';
-import 'package:app/user_distance/UserDistanceSylhet/UserDistanceJaintapur/UserDistanceJaintapur.dart';
+import 'package:app/user_distance/app/views/UserDistanceSylhet/UserDistanceCompaniganj/user_distance_page_comp.dart';
+import 'package:app/user_distance/app/views/UserDistanceSylhet/UserDistanceJaintapur/UserDistanceJaintapur.dart';
 import 'package:flutter/material.dart';
 
-import '../user_distance/UserDistanceSylhet/UserDistanceSylSadar/user_distance_page.dart';
+import '../../UserDistanceSylhet/UserDistanceSylSadar/user_distance_page.dart';
 
 class Info extends StatelessWidget {
   final data;

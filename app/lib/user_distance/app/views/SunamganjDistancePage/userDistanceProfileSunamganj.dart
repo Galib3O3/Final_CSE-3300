@@ -2,21 +2,20 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../../UserDistanceMethod/method-user-volenteer.dart';
+import '../../model/user-volenteer-method-.dart';
 
-class UserDistanceProfilePage_Companigonj extends StatefulWidget {
+class UserDistanceProfilePage_sunamganj extends StatefulWidget {
   @override
-  State<UserDistanceProfilePage_Companigonj> createState() =>
-      _UserDistanceProfilePage_CompanigonjState();
+  State<UserDistanceProfilePage_sunamganj> createState() =>
+      _UserDistanceProfilePage_sunamganjState();
 }
 
-class _UserDistanceProfilePage_CompanigonjState
-    extends State<UserDistanceProfilePage_Companigonj> {
-  List CompaniGonjRescue = [25.08, 91.75];
-  List TukerBazarClub = [25.11, 91.75];
-  // List user1LatLon = [25.15, 91.74]; //Bholagonj
-  List user2LatLon = [25.16, 91.72]; //Sada Pathof
-
+class _UserDistanceProfilePage_sunamganjState
+    extends State<UserDistanceProfilePage_sunamganj> {
+  List saveSunamganj = [25.0668, 91.4073];
+  List bdrcs = [25.0699, 91.3998];
+  List user1LatLon = [25.0657, 91.4063]; // sadarMosjid
+  List user2LatLon = [25.0727, 91.4089]; // iscon,
   dynamic _distanc1, _distanc2, discollect1, discollect2;
 
   @override
@@ -54,36 +53,8 @@ class _UserDistanceProfilePage_CompanigonjState
                               SizedBox(
                                 height: 10,
                               ),
-                              // Icon(
-                              //   Icons.man_2_sharp,
-                              //   size: 64,
-                              // ),
-                              // Text("Bholagonj"),
-                              // Divider(),
-                              // Text("lat lon 25.15243, 92.74756 "),
-                              //  List user1LatLon = []; //
                             ]),
                       ),
-                      // onTap: () {
-                      //   discollect2 =
-                      //       DistanceUserVolenmCalculator.calculateDistance(
-                      //           user1LatLon[0],
-                      //           user1LatLon[1],
-                      //           TukerBazarClub[0],
-                      //           TukerBazarClub[1]);
-                      //   discollect1 =
-                      //       DistanceUserVolenmCalculator.calculateDistance(
-                      //     user1LatLon[0],
-                      //     user1LatLon[1],
-                      //     CompaniGonjRescue[0],
-                      //     CompaniGonjRescue[1],
-                      //   );
-                      //   setState(() {
-                      //     _distanc1 = discollect1;
-                      //     _distanc2 = discollect2;
-                      //     print("discolle2 = ${discollect2}");
-                      //   });
-                      // },
                     ),
                     GestureDetector(
                       child: Container(
@@ -98,10 +69,9 @@ class _UserDistanceProfilePage_CompanigonjState
                                 Icons.man_2_sharp,
                                 size: 64,
                               ),
-                              Text("Sadapathor"),
+                              Text("Iscon , Sadar"),
                               Divider(),
-                              Text("lat lon 25.16438, 91.75445 "),
-                              // List user2LatLon = []; //, Bangladesh
+                              Text("lat lon 25.0727, 91.4089 "),
                             ]),
                       ),
                       onTap: () {
@@ -109,14 +79,14 @@ class _UserDistanceProfilePage_CompanigonjState
                             DistanceUserVolenmCalculator.calculateDistance(
                                 user2LatLon[0],
                                 user2LatLon[1],
-                                TukerBazarClub[0],
-                                TukerBazarClub[1]);
+                                bdrcs[0],
+                                bdrcs[1]);
                         discollect1 =
                             DistanceUserVolenmCalculator.calculateDistance(
                           user2LatLon[0],
                           user2LatLon[1],
-                          CompaniGonjRescue[0],
-                          CompaniGonjRescue[1],
+                          saveSunamganj[0],
+                          saveSunamganj[1],
                         );
                         setState(() {
                           _distanc1 = discollect1;
@@ -155,8 +125,10 @@ class _UserDistanceProfilePage_CompanigonjState
                                 SizedBox(
                                   height: 20,
                                 ),
-                                Text("lat lon 25.0882, 91.7551"),
-                                Text(" Team : CompaniGonjRescue "),
+
+                                Text("lat lon 25.0668 , 91.4073"),
+                                Text(" Team : Save Sunamganj "),
+                                // List user2LatLon = [25.0990, 91.1755]; // Tahirpur,
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -164,7 +136,7 @@ class _UserDistanceProfilePage_CompanigonjState
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Text("01876475843")
+                                    Text("01722635678")
                                   ],
                                 ),
                                 Divider(),
@@ -201,9 +173,10 @@ class _UserDistanceProfilePage_CompanigonjState
                               SizedBox(
                                 height: 20,
                               ),
-                              Text("lat lon 25.16438, 91.75445  "),
+
+                              Text("lat lon 25.0699, 91.3998 "),
                               //salutikorBazar = [];
-                              Text(" Team : TukerBazarClub"),
+                              Text(" Team : B D R C S"),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [

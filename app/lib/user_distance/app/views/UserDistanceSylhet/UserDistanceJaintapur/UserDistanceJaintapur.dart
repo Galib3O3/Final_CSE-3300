@@ -2,20 +2,21 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../UserDistanceMethod/method-user-volenteer.dart';
+import '../../../model/user-volenteer-method-.dart';
 
-class UserDistanceProfilePage_dirai extends StatefulWidget {
+class UserDistanceProfilePage_Jaintapur extends StatefulWidget {
   @override
-  State<UserDistanceProfilePage_dirai> createState() =>
-      _UserDistanceProfilePage_diraiState();
+  State<UserDistanceProfilePage_Jaintapur> createState() =>
+      _UserDistanceProfilePage_JaintapurState();
 }
 
-class _UserDistanceProfilePage_diraiState
-    extends State<UserDistanceProfilePage_dirai> {
-  List saveSunamganj = [25.0668, 91.4073];
-  List bdrcs = [25.0699, 91.3998];
-  List user1LatLon = [24.7940, 91.3706]; // karimpur Mosjid
-  List user2LatLon = [24.7910, 91.3474]; // Dirai G college,
+class _UserDistanceProfilePage_JaintapurState
+    extends State<UserDistanceProfilePage_Jaintapur> {
+  List saveSylhet = [24.8945, 91.8673];
+  List Sharighat = [25.08931, 92.11767];
+  List user1LatLon = [25.17526, 92.01496]; //jaflong
+  List user2LatLon = [25.1349, 92.1223]; //Jaintapur Bazar
+
   dynamic _distanc1, _distanc2, discollect1, discollect2;
 
   @override
@@ -27,7 +28,7 @@ class _UserDistanceProfilePage_diraiState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("D I R A I"),
+        title: Text("USER"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -53,8 +54,37 @@ class _UserDistanceProfilePage_diraiState
                               SizedBox(
                                 height: 10,
                               ),
+                              Icon(
+                                Icons.man_2_sharp,
+                                color: Colors.blueAccent,
+                                size: 64,
+                              ),
+                              Text("Jaflong"),
+                              Divider(),
+                              Text("lat: 25.17526 \nlon: 92.01496 "),
+                              //  List user1LatLon = []; //
                             ]),
                       ),
+                      onTap: () {
+                        discollect2 =
+                            DistanceUserVolenmCalculator.calculateDistance(
+                                user1LatLon[0],
+                                user1LatLon[1],
+                                Sharighat[0],
+                                Sharighat[1]);
+                        discollect1 =
+                            DistanceUserVolenmCalculator.calculateDistance(
+                          user1LatLon[0],
+                          user1LatLon[1],
+                          saveSylhet[0],
+                          saveSylhet[1],
+                        );
+                        setState(() {
+                          _distanc1 = discollect1;
+                          _distanc2 = discollect2;
+                          print("discolle2 = ${discollect2}");
+                        });
+                      },
                     ),
                     GestureDetector(
                       child: Container(
@@ -67,12 +97,13 @@ class _UserDistanceProfilePage_diraiState
                               ),
                               Icon(
                                 Icons.man_2_sharp,
+                                color: Colors.blueAccent,
                                 size: 64,
                               ),
-                              Text("Dirai G college"),
+                              Text("Jaintapur Bazar"),
                               Divider(),
-                              Text("lat lon 24.7910, 91.3474 "),
-                              //[]; //
+                              Text("lat lon 25.1349, 92.1223 "),
+                              // List user2LatLon = []; //, Bangladesh
                             ]),
                       ),
                       onTap: () {
@@ -80,14 +111,14 @@ class _UserDistanceProfilePage_diraiState
                             DistanceUserVolenmCalculator.calculateDistance(
                                 user2LatLon[0],
                                 user2LatLon[1],
-                                bdrcs[0],
-                                bdrcs[1]);
+                                Sharighat[0],
+                                Sharighat[1]);
                         discollect1 =
                             DistanceUserVolenmCalculator.calculateDistance(
                           user2LatLon[0],
                           user2LatLon[1],
-                          saveSunamganj[0],
-                          saveSunamganj[1],
+                          saveSylhet[0],
+                          saveSylhet[1],
                         );
                         setState(() {
                           _distanc1 = discollect1;
@@ -121,15 +152,14 @@ class _UserDistanceProfilePage_diraiState
                                 ),
                                 Icon(
                                   Icons.volunteer_activism,
+                                  color: Colors.blueAccent,
                                   size: 60,
                                 ),
                                 SizedBox(
                                   height: 20,
                                 ),
-
-                                Text("lat lon 25.0668 , 91.4073"),
-                                Text(" Team : Save Sunamganj "),
-                                // List user2LatLon = [25.0990, 91.1755]; // Tahirpur,
+                                Text("lat: 24.8945 & lon: 91.8673 "),
+                                Text(" Team : Save Sylhet "),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -137,7 +167,7 @@ class _UserDistanceProfilePage_diraiState
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Text("01722635678")
+                                    Text("01567987098")
                                   ],
                                 ),
                                 Divider(),
@@ -169,15 +199,15 @@ class _UserDistanceProfilePage_diraiState
                               ),
                               Icon(
                                 Icons.volunteer_activism,
+                                color: Colors.blueAccent,
                                 size: 60,
                               ),
                               SizedBox(
                                 height: 20,
                               ),
-
-                              Text("lat lon 25.0699, 91.3998 "),
+                              Text("lat lon 25.08931, 92.11767 "),
                               //salutikorBazar = [];
-                              Text(" Team : B D R C S"),
+                              Text(" Team : Sharighat"),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -185,7 +215,7 @@ class _UserDistanceProfilePage_diraiState
                                   SizedBox(
                                     width: 10,
                                   ),
-                                  Text("01734343434")
+                                  Text("01567987098")
                                 ],
                               ),
                               Divider(),
