@@ -113,18 +113,27 @@ class _copyMainFileState extends State<copyMainFile> {
 
 Widget clickMe(dynamic data) {
   return Container(
-    height: 80,
-    width: 250,
+    height: 90,
+    width: 210,
+    padding: EdgeInsets.all(20),
     child: ElevatedButton(
-      style: ButtonStyle(
-        side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
-          if (states.contains(MaterialState.hovered)) {
-            return const BorderSide(color: Color.fromARGB(202, 54, 244, 139));
-          }
-          return null; // Defer to default value on the theme or widget.
-        }),
+      style: ElevatedButton.styleFrom(
+          backgroundColor: Color.fromARGB(252, 9, 227, 198),
+          shadowColor: Color.fromARGB(240, 130, 55, 55)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Icon(
+            Icons.safety_check,
+            color: Colors.purpleAccent,
+            size: 40,
+          ),
+          Text(
+            "For Safety",
+            style: TextStyle(fontSize: 20),
+          ),
+        ],
       ),
-      child: Text("Click For Safety"),
       onPressed: () {
         print(" i am here ${data}");
         Get.to(() => CarefullRulesPage(), arguments: data);
