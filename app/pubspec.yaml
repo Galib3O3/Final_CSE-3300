@@ -92,6 +92,8 @@ flutter:
     - assets/donation.png
     - assets/LC.png
     - assets/about_us.png
+    - img/pp.png
+    - img/fund.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

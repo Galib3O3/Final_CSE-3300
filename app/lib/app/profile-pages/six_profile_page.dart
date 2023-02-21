@@ -8,12 +8,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 import '../../Dontaion/donation.dart';
 import '../../function/user_func.dart';
 import '../../login_reg/login.dart';
-import '../../weather-parts/main-page/district-profile.dart';
+import '../../weather-parts/app/district-profile_page_sylhet.dart';
 
 class SixProfileView extends StatefulWidget {
   const SixProfileView({super.key});
@@ -59,7 +60,7 @@ class _SixProfileViewState extends State<SixProfileView> {
           child: Column(
         children: [
           const SizedBox(
-            height: 40,
+            height: 75,
           ),
 
           // ignore: unnecessary_new
@@ -144,7 +145,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                   ),
                   onTap: () {
                     setState(() {
-                      Get.to(SylhetRegion());
+                      Get.to(const SylhetRegion());
                     });
                   }),
               GestureDetector(
@@ -162,7 +163,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                           ),
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Donation",
                         style: TextStyle(fontSize: 18),
                       )
@@ -170,7 +171,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                   ),
                   onTap: () {
                     setState(() {
-                      Get.to(donation());
+                      Get.to(const donation());
                     });
                   }),
               GestureDetector(
@@ -188,7 +189,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                           ),
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Live Chat",
                         style: TextStyle(fontSize: 18),
                       )
@@ -215,7 +216,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                           ),
                         ),
                       ),
-                      Text(
+                      const Text(
                         "about us",
                         style: TextStyle(fontSize: 18),
                       )
@@ -223,22 +224,22 @@ class _SixProfileViewState extends State<SixProfileView> {
                   ),
                   onTap: () {
                     setState(() {
-                      Get.to(RowCol_11());
+                      Get.to(AboutUs());
                     });
                   }),
             ],
           )),
-          ElevatedButton(
-              onPressed: () {
-                logout(context);
-              },
-              child: Text("Log out")),
-          SizedBox(
+          // ElevatedButton(
+          //     onPressed: () {
+          //       logout(context);
+          //     },
+          //     child: const Text("Log out")),
+          const SizedBox(
             height: 20,
           ),
         ],
       )),
-      backgroundColor: Color.fromARGB(248, 245, 245, 245),
+      backgroundColor: const Color.fromARGB(248, 245, 245, 245),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -271,8 +272,7 @@ class _SixProfileViewState extends State<SixProfileView> {
             ListTile(
               title: const Text('Logout'),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                logout(context);
               },
             ),
           ],
@@ -286,5 +286,6 @@ class _SixProfileViewState extends State<SixProfileView> {
 
     Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const loginscreen()));
+    Fluttertoast.showToast(msg: "Logout Successfully");
   }
 }

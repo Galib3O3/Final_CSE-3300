@@ -22,9 +22,9 @@ class _ProfilePageState extends State<ProfilePage> {
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => const SixProfileView()));
         }),
-        title: Text("Profile"),
+        title: const Text("Profile"),
       ),
-      backgroundColor: Color.fromARGB(198, 178, 197, 204),
+      backgroundColor: const Color.fromARGB(197, 132, 206, 234),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -33,31 +33,30 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             Container(
               //color: Colors.red,
-              height: 150,
-              child: const Icon(
-                Icons.account_circle,
-                size: 150,
-                color: Colors.black,
+              height: 200,
+              child: Image.asset(
+                "img/pp.png",
+                fit: BoxFit.contain,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Container(
               width: 350,
-              height: 80,
-              padding: EdgeInsets.all(10),
+              height: 40,
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 12, 186, 209),
+                  color: Color.fromARGB(255, 161, 218, 226),
                   borderRadius: BorderRadius.circular(20.0),
                   border: Border.all(color: Colors.black)),
               child: ListView(scrollDirection: Axis.horizontal, children: [
                 Row(
                   children: [
                     const Text(
-                      "Name adfaffdsaaasdfafafffffffffffffffffffffaaaaaaaaaafa  :",
+                      "Name :   ",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 20,
                       ),
                     ),
                     Text("${loggedUser.firstName} ${loggedUser.lastName}",
@@ -68,56 +67,26 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ]),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Container(
-              width: 350,
-              height: 80,
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 209, 12, 12),
-                  borderRadius: BorderRadius.circular(20.0),
-                  border: Border.all(color: Colors.black)),
-              child: Row(
-                  //scrollDirection: Axis.horizontal,
-                  children: [
-                    Text(
-                      "Email : ",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    Container(
-                      height: 20,
-                      width: 250,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          Text(
-                            "      samisamdfasffffffffffffffffamas",
-                            style: TextStyle(fontSize: 20),
-                          )
-                        ],
-                      ),
-                    )
-                  ]),
-            ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 12, 186, 209),
+                  color: const Color.fromARGB(255, 161, 218, 226),
                   borderRadius: BorderRadius.circular(20.0),
                   border: Border.all(color: Colors.black)),
               width: 350,
-              height: 80,
+              height: 40,
               child: ListView(scrollDirection: Axis.horizontal, children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Email  :",
-                      style: TextStyle(fontSize: 16),
+                      " Email :   ",
+                      style: TextStyle(fontSize: 20),
                     ),
                     Text("${loggedUser.email}",
                         style: const TextStyle(
@@ -127,16 +96,16 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ]),
             ),
-            SizedBox(
-              height: 20,
+            const SizedBox(
+              height: 60,
             ),
             Container(
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 12, 186, 209),
-                  borderRadius: BorderRadius.circular(120.0),
+                  color: const Color.fromARGB(255, 161, 218, 226),
+                  borderRadius: BorderRadius.circular(110.0),
                   border: Border.all(color: Colors.black)),
-              width: 180,
-              height: 80,
+              width: 190,
+              height: 50,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -149,7 +118,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           child: const Text(
                             "Verified",
                             style: TextStyle(
-                                color: Color.fromARGB(255, 200, 10, 229),
+                                color: Color.fromARGB(255, 117, 1, 134),
                                 fontSize: 24),
                             textAlign: TextAlign.center,
                           ),
@@ -167,7 +136,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 150,
             ),
           ],
@@ -203,94 +172,94 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 
-  Widget ColumnT() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 130,
-                ),
-                const Icon(
-                  Icons.account_circle,
-                  size: 100,
-                  color: Colors.black,
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      "Name  :",
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
-                    Text("${loggedUser.firstName} ${loggedUser.lastName}",
-                        style: const TextStyle(
-                          fontSize: 20,
-                        )),
-                  ],
-                ),
-                const Divider(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      "Email  :",
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    Text("${loggedUser.email}",
-                        style: const TextStyle(
-                          fontSize: 20,
-                        )),
-                  ],
-                ),
-                const SizedBox(
-                  height: 150,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    user!.emailVerified
-                        ? Container(
-                            height: 40,
-                            width: 100,
-                            color: Color.fromARGB(255, 26, 226, 59),
-                            child: const Text(
-                              "Verified",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 200, 10, 229),
-                                  fontSize: 24),
-                              textAlign: TextAlign.center,
-                            ),
-                          )
-                        : TextButton(
-                            onPressed: () {
-                              verifymail();
-                            },
-                            child: const Text(
-                              "Verify mail",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 181, 13, 13)),
-                            ),
-                          ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
+  // Widget ColumnT() {
+  //   return Column(
+  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //     children: [
+  //       SingleChildScrollView(
+  //         child: Container(
+  //           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+  //           child: Column(
+  //             children: [
+  //               SizedBox(
+  //                 height: 130,
+  //               ),
+  //               const Icon(
+  //                 Icons.account_circle,
+  //                 size: 100,
+  //                 color: Colors.black,
+  //               ),
+  //               const SizedBox(
+  //                 height: 40,
+  //               ),
+  //               Row(
+  //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                 children: [
+  //                   const Text(
+  //                     "Name  :",
+  //                     style: TextStyle(
+  //                       fontSize: 16,
+  //                     ),
+  //                   ),
+  //                   Text("${loggedUser.firstName} ${loggedUser.lastName}",
+  //                       style: const TextStyle(
+  //                         fontSize: 20,
+  //                       )),
+  //                 ],
+  //               ),
+  //               const Divider(
+  //                 height: 20,
+  //               ),
+  //               Row(
+  //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                 children: [
+  //                   const Text(
+  //                     "Email  :",
+  //                     style: TextStyle(fontSize: 16),
+  //                   ),
+  //                   Text("${loggedUser.email}",
+  //                       style: const TextStyle(
+  //                         fontSize: 20,
+  //                       )),
+  //                 ],
+  //               ),
+  //               const SizedBox(
+  //                 height: 150,
+  //               ),
+  //               Column(
+  //                 mainAxisAlignment: MainAxisAlignment.center,
+  //                 crossAxisAlignment: CrossAxisAlignment.center,
+  //                 children: [
+  //                   user!.emailVerified
+  //                       ? Container(
+  //                           height: 40,
+  //                           width: 100,
+  //                           color: Color.fromARGB(255, 26, 226, 59),
+  //                           child: const Text(
+  //                             "Verified",
+  //                             style: TextStyle(
+  //                                 color: Color.fromARGB(255, 200, 10, 229),
+  //                                 fontSize: 24),
+  //                             textAlign: TextAlign.center,
+  //                           ),
+  //                         )
+  //                       : TextButton(
+  //                           onPressed: () {
+  //                             verifymail();
+  //                           },
+  //                           child: const Text(
+  //                             "Verify mail",
+  //                             style: TextStyle(
+  //                                 color: Color.fromARGB(255, 181, 13, 13)),
+  //                           ),
+  //                         ),
+  //                 ],
+  //               ),
+  //             ],
+  //           ),
+  //         ),
+  //       ),
+  //     ],
+  //   );
+  // }
 }

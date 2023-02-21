@@ -107,22 +107,22 @@ class _loginscreenState extends State<loginscreen> {
                         fit: BoxFit.contain,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 45,
                     ),
                     eField,
-                    SizedBox(
+                   const SizedBox(
                       height: 25,
                     ),
                     pField,
-                    SizedBox(
+                    const SizedBox(
                       height: 35,
                     ),
                     loginBtn,
-                    SizedBox(
+                   const SizedBox(
                       height: 15,
                     ),
-                    SizedBox(height: 25),
+                  const  SizedBox(height: 25),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
@@ -131,7 +131,7 @@ class _loginscreenState extends State<loginscreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ForgotPassword(),
+                                builder: (context) => const ForgotPassword(),
                               ),
                             );
                           },

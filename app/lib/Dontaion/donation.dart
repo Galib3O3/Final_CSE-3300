@@ -16,7 +16,6 @@ class donation extends StatefulWidget {
 }
 
 class _donationState extends State<donation> {
-
   final nameEditingController = TextEditingController();
   //2nd name
   final numberEditingController = TextEditingController();
@@ -44,7 +43,7 @@ class _donationState extends State<donation> {
       decoration: InputDecoration(
           prefixIcon: Icon(Icons.people),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "First Name",
+          hintText: "Name",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )),
@@ -54,7 +53,6 @@ class _donationState extends State<donation> {
       autofocus: false,
       controller: numberEditingController,
       keyboardType: TextInputType.emailAddress,
-     
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
           prefixIcon: Icon(Icons.phone),
@@ -113,6 +111,8 @@ class _donationState extends State<donation> {
               numberEditingController.text != "" &&
               transication_ID_EditingController.text != "") {
             FirebaseFirestore.instance.collection("donation").add(data);
+            Fluttertoast.showToast(
+                msg: "Donatio information Submitted\n we will ensure you");
             Get.to(SixProfileView());
           } else {
             Fluttertoast.showToast(msg: "all field reqiure ");
@@ -155,9 +155,9 @@ class _donationState extends State<donation> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(
-                      height: 180,
+                      height: 240,
                       child: Image.asset(
-                        "img/fundsv.png",
+                        "img/fund.png",
                         fit: BoxFit.contain,
                       ),
                     ),

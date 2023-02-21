@@ -10,8 +10,8 @@ var history = "\nOUR app is mainly divided into 4 parts here"
     "It return current weather along side some additional informations";
 
 // ignore: camel_case_types
-class RowCol_11 extends StatelessWidget {
-  const RowCol_11({super.key});
+class AboutUs extends StatelessWidget {
+  const AboutUs({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -113,30 +113,11 @@ class RowCol_11 extends StatelessWidget {
                         const Padding(padding: EdgeInsets.only(top: 50)),
                         const Padding(padding: EdgeInsets.only(left: 20)),
                         const Text(
-                          "Md. Asadullah-Al-Galib ",
+                          "Md.Asadullah-Al-Galib ",
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
-                        const Text(
-                          "Md. Asadu  ",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      // mainAxisAlignment: MainAxisAlignment.center,
-                      // crossAxisAlignment: CrossAxisAlignment.center,
-
-                      /// ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        const Padding(padding: EdgeInsets.only(top: 50)),
-                        const Padding(padding: EdgeInsets.only(left: 20)),
-                        const Text(
-                          "Md. Asad  ",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
+                        
                       ],
                     ),
                   ],

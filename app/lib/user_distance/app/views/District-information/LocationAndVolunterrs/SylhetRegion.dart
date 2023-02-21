@@ -78,7 +78,7 @@ class _SylhetRegionState extends State<SylhetRegion> {
                           },
                           child: Column(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 10.0,
                                 width: 10.0,
                               ),
@@ -86,13 +86,13 @@ class _SylhetRegionState extends State<SylhetRegion> {
                                 child: ListTile(
                                   title: Text(
                                     document["NAME"],
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 19,
                                       color: Colors.black,
                                     ),
                                   ),
-                                  subtitle: Text("upozilla's"),
-                                  leading: Icon(Icons.location_pin,
+                                  subtitle:const Text("upozilla's"),
+                                  leading:const Icon(Icons.location_pin,
                                       size: 40, color: Colors.blue),
                                 ),
                               ),

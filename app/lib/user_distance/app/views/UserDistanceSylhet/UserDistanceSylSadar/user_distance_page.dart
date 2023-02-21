@@ -1,7 +1,5 @@
-import 'dart:math';
-
-import 'package:app/user_distance/app/views/District-information/Sylhet_information/syl_info.dart';
 import 'package:app/app/profile-pages/six_profile_page.dart';
+import 'package:app/user_distance/app/views/District-information/Sylhet_information/syl_info.dart';
 import 'package:flutter/material.dart';
 
 import '../../../model/user-volenteer-method-.dart';
@@ -30,7 +28,10 @@ class _UserDistanceProfilePage_SYLState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("USER"),
+        // leading: BackButton(onPressed: () {
+        //   Navigator.of(context).pop();
+        // }),
+        title: const Text("Profile"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -574,7 +575,7 @@ class _UserDistanceProfilePage_SYLState
 //   }
 // }
 
-Widget bongsong() {
+Widget users() {
   return Expanded(
       child: GridView.extent(
     primary: false,
