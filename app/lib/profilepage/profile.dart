@@ -26,6 +26,7 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       backgroundColor: const Color.fromARGB(197, 132, 206, 234),
       body: SingleChildScrollView(
+        padding: EdgeInsets.all(10.0),
         child: Column(
           children: [
             Container(
@@ -44,64 +45,117 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             Container(
               width: 350,
-              height: 40,
-              padding: const EdgeInsets.all(10),
+              height: 80,
+              padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 161, 218, 226),
+                  color: Color.fromARGB(255, 12, 186, 209),
                   borderRadius: BorderRadius.circular(20.0),
                   border: Border.all(color: Colors.black)),
               child: ListView(scrollDirection: Axis.horizontal, children: [
-                Row(
-                  children: [
-                    const Text(
-                      "Name :   ",
-                      style: TextStyle(
-                        fontSize: 20,
+                Row(children: [
+                  Row(
+                    children: [
+                      Icon(Icons.man),
+                      Text(
+                        " Email : ",
+                        style: TextStyle(
+                          fontSize: 22,
+                        ),
                       ),
+                    ],
+                  ),
+                  Container(
+                    width: 200,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Center(
+                          child: Text(
+                              "  ${loggedUser.firstName} ${loggedUser.lastName} ",
+                              style: const TextStyle(
+                                fontSize: 20,
+                              )),
+                        ),
+                      ],
                     ),
-                    Text("${loggedUser.firstName} ${loggedUser.lastName}",
-                        style: const TextStyle(
-                          fontSize: 20,
-                        )),
-                  ],
-                ),
+                  ),
+                ]),
               ]),
             ),
             const SizedBox(
               height: 20,
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            // Container(
+            //   decoration: BoxDecoration(
+            //       color: const Color.fromARGB(255, 161, 218, 226),
+            //       borderRadius: BorderRadius.circular(20.0),
+            //       border: Border.all(color: Colors.black)),
+            //   width: 350,
+            //   height: 40,
+            //   child: ListView(scrollDirection: Axis.horizontal, children: [
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //         const Text(
+            //           " Email :   ",
+            //           style: TextStyle(fontSize: 20),
+            //         ),
+            //         Text("${loggedUser.email}",
+            //             style: const TextStyle(
+            //               fontSize: 20,
+            //             )),
+            //       ],
+            //     ),
+            //   ]),
+            // ),
+            // const SizedBox(
+            //   height: 60,
+            // ),
             Container(
+              width: 350,
+              height: 80,
+              padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 161, 218, 226),
+                  color: Color.fromARGB(255, 12, 186, 209),
                   borderRadius: BorderRadius.circular(20.0),
                   border: Border.all(color: Colors.black)),
-              width: 350,
-              height: 40,
               child: ListView(scrollDirection: Axis.horizontal, children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      " Email :   ",
-                      style: TextStyle(fontSize: 20),
+                Row(children: [
+                  Row(
+                    children: [
+                      Icon(Icons.mark_email_unread),
+                      Text(
+                        " Email : ",
+                        style: TextStyle(
+                          fontSize: 22,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    width: 200,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Center(
+                          child: Text("${loggedUser.email}",
+                              style: const TextStyle(
+                                fontSize: 20,
+                              )),
+                        ),
+                      ],
                     ),
-                    Text("${loggedUser.email}",
-                        style: const TextStyle(
-                          fontSize: 20,
-                        )),
-                  ],
-                ),
+                  ),
+                ]),
               ]),
             ),
             const SizedBox(
-              height: 60,
+              height: 20,
             ),
+
             Container(
               decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 161, 218, 226),
+                  color: Color.fromARGB(255, 126, 219, 231),
                   borderRadius: BorderRadius.circular(110.0),
                   border: Border.all(color: Colors.black)),
               width: 190,
@@ -115,22 +169,26 @@ class _ProfilePageState extends State<ProfilePage> {
                           height: 40,
                           width: 100,
                           // color: Color.fromARGB(255, 26, 226, 59),
-                          child: const Text(
-                            "Verified",
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 117, 1, 134),
-                                fontSize: 24),
-                            textAlign: TextAlign.center,
+                          child: Center(
+                            child: const Text(
+                              "Verified",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 117, 1, 134),
+                                  fontSize: 24),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                         )
                       : TextButton(
                           onPressed: () {
                             verifymail();
                           },
-                          child: const Text(
-                            "Verify mail",
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 181, 13, 13)),
+                          child: Center(
+                            child: const Text(
+                              "Verify mail",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 181, 13, 13)),
+                            ),
                           ),
                         ),
                 ],

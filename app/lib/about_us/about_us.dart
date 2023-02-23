@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 
-var history = "\nOUR app is mainly divided into 4 parts here"
+String history = "\nOUR app is mainly divided into 4 parts here"
     "\n\n 1. Careful Message based on Weather\n"
     "\n 2. Nearest Volenteer\n"
     "\n 3. .....\n"
     "\n 4. .....\n"
     "\n .\n .\n .\n .\n .\n .\n"
-    "Weather Informations\n"
-    "It return current weather along side some additional informations";
+    "**** Weather Informations ***\n"
+    "It return current weather along side some additional informations "
+    "Also the weather careful informations is based on the ID status "
+    "\n  \n"
+    "**** Volunteer ***\n"
+    "There is 2 parts one can show the user list of the messenger\n"
+    "another one is volunteer form where new user can want to join"
+    "\n  \n"
+    " Shlter Part \n"
+    " In this function we are trying to add shelter name and populations"
+    "\nanother one ";
 
 // ignore: camel_case_types
-class AboutUs extends StatelessWidget {
-  const AboutUs({super.key});
+class AboutusPage extends StatelessWidget {
+  const AboutusPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,49 +53,55 @@ class AboutUs extends StatelessWidget {
                   width: 120,
                 ),
               ),
-              Container(
-                height: 100,
-                width: 150,
-                color: Colors.amber,
-                child: SingleChildScrollView(
-                  child: Column(children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      color: Colors.black,
-                    ),
-                    SizedBox(
-                      width: 45,
-                    ),
-                    Container(
-                      height: 100,
-                      width: 100,
-                      color: Color.fromARGB(255, 4, 173, 29),
-                    ),
-                    SizedBox(
-                      width: 45,
-                    ),
-                    Container(
-                      height: 100,
-                      width: 100,
-                      color: Color.fromARGB(255, 171, 11, 11),
-                    ),
-                    SizedBox(
-                      width: 45,
-                    ),
-                    Container(
-                      height: 100,
-                      width: 100,
-                      color: Color.fromARGB(255, 16, 203, 10),
-                    )
-                  ]),
-                ),
-              ),
+              // Container(
+              //   height: 100,
+              //   width: 150,
+              //   color: Colors.amber,
+              //   child: SingleChildScrollView(
+              //     child: Column(children: [
+              //       Container(
+              //         height: 100,
+              //         width: 100,
+              //         color: Colors.black,
+              //       ),
+              //       SizedBox(
+              //         width: 45,
+              //       ),
+              //       Container(
+              //         height: 100,
+              //         width: 100,
+              //         color: Color.fromARGB(255, 4, 173, 29),
+              //       ),
+              //       SizedBox(
+              //         width: 45,
+              //       ),
+              //       Container(
+              //         height: 100,
+              //         width: 100,
+              //         color: Color.fromARGB(255, 171, 11, 11),
+              //       ),
+              //       SizedBox(
+              //         width: 45,
+              //       ),
+              //       Container(
+              //         height: 100,
+              //         width: 100,
+              //         color: Color.fromARGB(255, 16, 203, 10),
+              //       )
+              //     ]),
+              //   ),
+              // ),
+
               Container(
                 margin: EdgeInsets.all(10),
-                padding: EdgeInsets.all(10),
-                height: 250,
-                color: Color.fromARGB(255, 7, 181, 255),
+                padding: EdgeInsets.all(0),
+                height: 280,
+                // color: Color.fromARGB(255, 7, 181, 255),
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 111, 210, 189),
+                    border: Border.all(
+                        color: Color.fromARGB(255, 36, 11, 20), width: 5),
+                    borderRadius: BorderRadius.circular(10)),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -101,61 +116,12 @@ class AboutUs extends StatelessWidget {
                 ),
               ),
               Container(
-                color: Colors.blue,
-                child: Column(
-                  children: [
-                    Column(
-                      //mainAxisAlignment: MainAxisAlignment.center,
-                      //crossAxisAlignment: CrossAxisAlignment.center,
-
-                      /// ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        const Padding(padding: EdgeInsets.only(top: 50)),
-                        const Padding(padding: EdgeInsets.only(left: 20)),
-                        const Text(
-                          "Md.Asadullah-Al-Galib ",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                        
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Row(
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  const Padding(padding: EdgeInsets.only(top: 50)),
-                  const Padding(padding: EdgeInsets.only(left: 20)),
-                  const Text(
-                    "Md Sajjadur Rahman",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              Row(
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  const Padding(padding: EdgeInsets.only(top: 50)),
-                  const Padding(padding: EdgeInsets.only(left: 20)),
-                  const Text(
-                    "Samina Hussain",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              Row(
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  const Padding(padding: EdgeInsets.only(top: 50)),
-                  const Padding(padding: EdgeInsets.only(left: 20)),
-                  const Text(
-                    "Student of Leading University",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
+                  child: Image.asset(
+                'assets/contibutor.png',
+                fit: BoxFit.cover,
+                height: 200,
+                width: 320,
+              )),
             ],
           ),
         ),

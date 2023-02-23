@@ -1,15 +1,11 @@
-
 import 'package:app/pages/splash.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
-
 Future<void> main() async {
   WidgetsFlutterBinding();
   await Firebase.initializeApp();
-  //print(FirebaseAuth.instance.currentUser!);
   runApp(const MyApp());
 }
 

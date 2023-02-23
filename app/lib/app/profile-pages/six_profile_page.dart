@@ -1,7 +1,7 @@
 import 'dart:ui';
-import 'package:app/Dontaion/donation1.dart';
+
 import 'package:app/user_distance/app/views/District-information/LocationAndVolunterrs/SylhetRegion.dart';
-import 'package:app/about_us/about_us.dart';
+
 import 'package:app/app/profile-pages/liveChatADH/livechat.dart';
 import 'package:app/profilepage/profile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -12,8 +12,10 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 import '../../Dontaion/donation.dart';
+import '../../about_us/about_us.dart';
 import '../../function/user_func.dart';
 import '../../login_reg/login.dart';
+import '../../shelter/shelter_page_view.dart';
 import '../../weather-parts/app/district-profile_page_sylhet.dart';
 
 class SixProfileView extends StatefulWidget {
@@ -119,7 +121,11 @@ class _SixProfileViewState extends State<SixProfileView> {
                   ),
                   onTap: () {
                     setState(() {
-                      // Get.to(MyHomePage(title: 'Flutter Demo Home Page'));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SchoolWithData()),
+                      );
                     });
                   }),
               GestureDetector(
@@ -224,7 +230,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                   ),
                   onTap: () {
                     setState(() {
-                      Get.to(AboutUs());
+                      Get.to(AboutusPage());
                     });
                   }),
             ],
