@@ -1,11 +1,7 @@
 import 'package:app/app/profile-pages/six_profile_page.dart';
-import 'package:app/function/user_func.dart';
-import 'package:app/pages/home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'donation_model.dart';
 import 'package:get/get.dart';
 
 class donation extends StatefulWidget {
@@ -21,8 +17,10 @@ class _donationState extends State<donation> {
   final numberEditingController = TextEditingController();
   //Email
   final amountEditingController = TextEditingController();
-  //pass
+
   final transication_ID_EditingController = TextEditingController();
+
+  final moneytransfer_EditingController = TextEditingController();
 
   // Future send() async {
   //   final db = FirebaseFirestore.instance.collection("Donation_data").add({
@@ -52,7 +50,7 @@ class _donationState extends State<donation> {
     final numberField = TextFormField(
       autofocus: false,
       controller: numberEditingController,
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: TextInputType.number,
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
           prefixIcon: Icon(Icons.phone),
@@ -65,7 +63,7 @@ class _donationState extends State<donation> {
     final amountField = TextFormField(
       autofocus: false,
       controller: amountEditingController,
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: TextInputType.number,
       onSaved: (value) {
         numberEditingController.text = value!;
       },
@@ -81,7 +79,7 @@ class _donationState extends State<donation> {
     final transictionField = TextFormField(
       autofocus: false,
       controller: transication_ID_EditingController,
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: TextInputType.name,
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
           prefixIcon: Icon(Icons.payment),
@@ -90,6 +88,37 @@ class _donationState extends State<donation> {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )),
+    );
+    final moneyfiled = DropdownButtonFormField(
+      dropdownColor: Colors.blueGrey[300],
+      focusColor: Colors.blueGrey[800],
+      autofocus: false,
+      decoration: const InputDecoration(
+        prefixIcon: Icon(Icons.note),
+        contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        hintText: 'moneytrasfer',
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(10.0),
+          ),
+        ),
+      ),
+      items: const [
+        DropdownMenuItem(
+          value: 'Bkash',
+          child: Text('Bkash'),
+        ),
+        DropdownMenuItem(
+          value: 'Rocket',
+          child: Text('Rocket'),
+        ),
+      ],
+      onChanged: (value) {
+        moneytransfer_EditingController.text = value!.toString();
+      },
+      
+      onSaved: (newValue) =>
+          moneytransfer_EditingController.text = newValue!.toString(),
     );
     final SendBtn = Material(
       elevation: 5,
@@ -104,12 +133,14 @@ class _donationState extends State<donation> {
             "number": numberEditingController.text,
             "amount": amountEditingController.text,
             "transicaiton_id": transication_ID_EditingController.text,
+            "moneytransfertype": moneytransfer_EditingController.text,
           };
 
           if (nameEditingController.text != "" &&
               amountEditingController.text != "" &&
               numberEditingController.text != "" &&
-              transication_ID_EditingController.text != "") {
+              transication_ID_EditingController.text != "" &&
+              moneytransfer_EditingController.text != "") {
             FirebaseFirestore.instance.collection("donation").add(data);
             Fluttertoast.showToast(
                 msg: "Donatio information Submitted\n we will ensure you");
@@ -155,14 +186,14 @@ class _donationState extends State<donation> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(
-                      height: 240,
+                      height: 160,
                       child: Image.asset(
                         "img/fund.png",
                         fit: BoxFit.contain,
                       ),
                     ),
                     const SizedBox(
-                      height: 45,
+                      height: 40,
                     ),
                     nameField,
                     const SizedBox(
@@ -177,6 +208,10 @@ class _donationState extends State<donation> {
                       height: 15,
                     ),
                     transictionField,
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    moneyfiled,
                     const SizedBox(
                       height: 15,
                     ),
