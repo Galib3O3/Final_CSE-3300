@@ -90,8 +90,11 @@ flutter:
     - assets/shelter.png
     - assets/volunteer.png
     - assets/donation.png
+    - assets/adhoc.jpg
+
     - assets/contibutor.png
     - assets/LC.png
+    - assets/lc.gif
     - assets/about_us.png
     - img/pp.png
     - img/fund.png
