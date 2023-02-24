@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:app/function/user_func.dart';
-import 'package:app/pages/homepage.dart';
 import 'package:app/login_reg/login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -42,11 +41,12 @@ class _SylhetRegionState extends State<SylhetRegion> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Info(document)));
+                                builder: (context) =>
+                                    SylhetDistrict(document)));
                       },
                       child: Column(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 10.0,
                             width: 10.0,
                           ),
@@ -54,13 +54,13 @@ class _SylhetRegionState extends State<SylhetRegion> {
                             child: ListTile(
                               title: Text(
                                 document["name"],
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 19,
                                   color: Colors.black,
                                 ),
                               ),
-                              subtitle: Text("upozilla's"),
-                              leading: Icon(Icons.location_pin,
+                              subtitle: const Text("upozilla's"),
+                              leading: const Icon(Icons.location_pin,
                                   size: 40, color: Colors.blue),
                             ),
                           ),
@@ -74,7 +74,8 @@ class _SylhetRegionState extends State<SylhetRegion> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Info1(document)));
+                                    builder: (context) =>
+                                        SunamgonjDistrict(document)));
                           },
                           child: Column(
                             children: [
@@ -91,8 +92,8 @@ class _SylhetRegionState extends State<SylhetRegion> {
                                       color: Colors.black,
                                     ),
                                   ),
-                                  subtitle:const Text("upozilla's"),
-                                  leading:const Icon(Icons.location_pin,
+                                  subtitle: const Text("upozilla's"),
+                                  leading: const Icon(Icons.location_pin,
                                       size: 40, color: Colors.blue),
                                 ),
                               ),

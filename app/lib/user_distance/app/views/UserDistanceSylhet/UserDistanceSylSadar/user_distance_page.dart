@@ -31,7 +31,7 @@ class _UserDistanceProfilePage_SYLState
         // leading: BackButton(onPressed: () {
         //   Navigator.of(context).pop();
         // }),
-        title: const Text("Profile"),
+        title: const Text("user distance"),
       ),
       body: SingleChildScrollView(
         child: Column(

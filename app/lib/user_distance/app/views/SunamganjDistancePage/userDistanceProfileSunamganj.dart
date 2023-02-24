@@ -27,7 +27,7 @@ class _UserDistanceProfilePage_sunamganjState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("USER"),
+        title: Text("user distance"),
       ),
       body: SingleChildScrollView(
         child: Column(

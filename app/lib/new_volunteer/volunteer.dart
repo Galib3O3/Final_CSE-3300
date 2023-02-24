@@ -17,21 +17,10 @@ class NewVolunteerFromPage extends StatefulWidget {
 
 class _NewVolunteerFromPageState extends State<NewVolunteerFromPage> {
   final nameEditingController = TextEditingController();
-  //2nd name
-  final numberEditingController = TextEditingController();
-  //Email
-  final IDEditingController = TextEditingController();
-  //pass
-  // final transication_ID_EditingController = TextEditingController();
 
-  // Future send() async {
-  //   final db = FirebaseFirestore.instance.collection("Donation_data").add({
-  //     'name': nameEditingController,
-  //     'number': numberEditingController,
-  //     'amout': amountEditingController,
-  //     'transiction_id': transication_ID_EditingController
-  //   });
-  // }
+  final numberEditingController = TextEditingController();
+
+  final IDEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -115,54 +104,78 @@ class _NewVolunteerFromPageState extends State<NewVolunteerFromPage> {
     );
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(onPressed: () {
-          Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const SylhetRegion()));
-        }),
-        title: const Text("New Volunteer"),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.blue,
+          ),
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => const SylhetRegion()));
+          },
+        ),
       ),
       backgroundColor: Colors.white,
-      body: Center(
-        child: SingleChildScrollView(
-          child: Container(
-            color: Colors.white,
-            child: Padding(
-              padding: const EdgeInsets.all(36.0),
-              child: Form(
-                //key: _formkey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 250,
-                      child: Image.asset(
-                        "img/sv.png",
-                        fit: BoxFit.contain,
+      body: Container(
+        child: Center(
+          child: SingleChildScrollView(
+            child: Container(
+              color: Colors.white,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 20),
+                    child: Form(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          SizedBox(
+                            height: 250,
+                            child: Image.asset(
+                              "img/sv.png",
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 45,
+                          ),
+                          // const Text(
+                          //   "Add new volunteer",
+                          //   style: TextStyle(
+                          //       color: Colors.cyan,
+                          //       fontSize: 20.0,
+                          //       fontWeight: FontWeight.bold,
+                          //       fontStyle: FontStyle.italic),
+                          // ),
+                          // const SizedBox(
+                          //   height: 45,
+                          // ),
+                          nameField,
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          numberField,
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          amountField,
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          const SizedBox(height: 40),
+                          SendBtn,
+                          const SizedBox(
+                            height: 100,
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(
-                      height: 45,
-                    ),
-                    nameField,
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    numberField,
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    amountField,
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    const SizedBox(height: 40),
-                    SendBtn,
-                    const SizedBox(
-                      height: 100,
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

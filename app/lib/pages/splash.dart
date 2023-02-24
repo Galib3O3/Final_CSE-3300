@@ -71,34 +71,3 @@ class _splashSState extends State<splashS> {
   }
 }
 
-
-
-
-
-
-// StreamBuilder<User?>(
-//           stream: FirebaseAuth.instance.authStateChanges(),
-//           builder: (context, snapshot) {
-//             if (snapshot.hasData) {
-//               return StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-//                 stream: FirebaseFirestore.instance
-//                     .collection('users')
-//                     .doc(snapshot.data!.uid)
-//                     .snapshots(),
-//                 builder: (context, snapshot) {
-//                   if (snapshot.hasData) {
-//                     return HomeScreen(
-//                       user: UserModel.fromMap(snapshot.data!, null),
-//                     );
-//                   } else {
-//                     return const Center(
-//                       child: CircularProgressIndicator(),
-//                     );
-//                   }
-//                 },
-//               );
-//             } else {
-//               return const LoginScreen();
-//             }
-//           },
-//         )

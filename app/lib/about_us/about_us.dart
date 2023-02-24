@@ -27,7 +27,15 @@ class AboutusPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: const Icon(Icons.developer_board),
+          leading: IconButton(
+            icon: const Icon(
+              Icons.developer_board,
+              color: Color.fromARGB(255, 250, 253, 255),
+            ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
           title: const Text(
             'About us ',
             textAlign: TextAlign.center,
@@ -44,7 +52,7 @@ class AboutusPage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const Padding(padding: EdgeInsets.only(top: 30)),
+              const Padding(padding: EdgeInsets.only(top: 10)),
               Container(
                 child: Image.asset(
                   'img/sv.png',
@@ -100,7 +108,7 @@ class AboutusPage extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 111, 210, 189),
                     border: Border.all(
-                        color: Color.fromARGB(255, 36, 11, 20), width: 5),
+                        color: Color.fromARGB(255, 36, 11, 20), width: 2),
                     borderRadius: BorderRadius.circular(10)),
                 child: SingleChildScrollView(
                   child: Column(

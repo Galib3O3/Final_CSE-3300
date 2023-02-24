@@ -27,7 +27,7 @@ class _UserDistanceProfilePage_tahirpurState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("T A H I R P U R"),
+        title: Text("user distance"),
       ),
       body: SingleChildScrollView(
         child: Column(

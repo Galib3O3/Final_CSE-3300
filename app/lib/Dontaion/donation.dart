@@ -144,7 +144,7 @@ class _donationState extends State<donation> {
             FirebaseFirestore.instance.collection("donation").add(data);
             Fluttertoast.showToast(
                 msg: "Donatio information Submitted\n we will ensure you");
-            Get.to(SixProfileView());
+            Get.to(const SixProfileView());
           } else {
             Fluttertoast.showToast(msg: "all field reqiure ");
           }

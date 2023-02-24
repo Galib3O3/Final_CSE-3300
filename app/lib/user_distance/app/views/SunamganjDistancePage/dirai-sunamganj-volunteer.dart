@@ -27,7 +27,7 @@ class _UserDistanceProfilePage_diraiState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("D I R A I"),
+        title:const  Text("user distance"),
       ),
       body: SingleChildScrollView(
         child: Column(

@@ -18,13 +18,15 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(253, 25, 115, 205),
+        elevation: 0,
         leading: BackButton(onPressed: () {
-          Navigator.of(context).pushReplacement(
+          Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const SixProfileView()));
         }),
         title: const Text("Profile"),
       ),
-      backgroundColor: const Color.fromARGB(197, 132, 206, 234),
+      backgroundColor: Color.fromARGB(253, 25, 115, 205),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10.0),
         child: Column(
@@ -45,10 +47,10 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             Container(
               width: 350,
-              height: 80,
+              height: 60,
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 12, 186, 209),
+                  color: Color.fromARGB(253, 25, 115, 205),
                   borderRadius: BorderRadius.circular(20.0),
                   border: Border.all(color: Colors.black)),
               child: ListView(scrollDirection: Axis.horizontal, children: [
@@ -57,7 +59,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     children: [
                       Icon(Icons.man),
                       Text(
-                        " Email : ",
+                        " Name : ",
                         style: TextStyle(
                           fontSize: 22,
                         ),
@@ -113,10 +115,10 @@ class _ProfilePageState extends State<ProfilePage> {
             // ),
             Container(
               width: 350,
-              height: 80,
+              height: 60,
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 12, 186, 209),
+                  color: Color.fromARGB(253, 25, 115, 205),
                   borderRadius: BorderRadius.circular(20.0),
                   border: Border.all(color: Colors.black)),
               child: ListView(scrollDirection: Axis.horizontal, children: [
@@ -155,7 +157,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
             Container(
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 126, 219, 231),
+                  color: Color.fromARGB(253, 25, 115, 205),
                   borderRadius: BorderRadius.circular(110.0),
                   border: Border.all(color: Colors.black)),
               width: 190,
@@ -173,8 +175,10 @@ class _ProfilePageState extends State<ProfilePage> {
                             child: const Text(
                               "Verified",
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 117, 1, 134),
-                                  fontSize: 24),
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -187,7 +191,15 @@ class _ProfilePageState extends State<ProfilePage> {
                             child: const Text(
                               "Verify mail",
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 181, 13, 13)),
+                                  color: Color.fromARGB(
+                                    255,
+                                    181,
+                                    13,
+                                    13,
+                                  ),
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic),
                             ),
                           ),
                         ),

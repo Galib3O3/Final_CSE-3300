@@ -4,22 +4,21 @@ import 'package:flutter/material.dart';
 
 import '../../UserDistanceSylhet/UserDistanceSylSadar/user_distance_page.dart';
 
-class Info extends StatelessWidget {
+class SylhetDistrict extends StatelessWidget {
   final data;
-  Info(this.data);
+  SylhetDistrict(this.data);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Areas"),
+        title: const Text(" Sylhet areas"),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
             color: Color.fromARGB(255, 255, 255, 255),
           ),
           onPressed: () {
-            //go to login section
             Navigator.of(context).pop();
           },
         ),
@@ -45,13 +44,18 @@ class Info extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      UserDistanceProfilePage_SYL()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  UserDistanceProfilePage_SYL()));
                         },
-                        leading: const Icon(Icons.location_pin,
-                            size: 40, color: Colors.blue),
+                        leading: const CircleAvatar(
+                          backgroundColor: Color.fromARGB(255, 9, 129, 241),
+                          child: Icon(
+                            Icons.location_pin,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -79,8 +83,14 @@ class Info extends StatelessWidget {
                                   builder: (context) =>
                                       UserDistanceProfilePage_Companigonj()));
                         },
-                        leading: const Icon(Icons.location_pin,
-                            size: 40, color: Colors.blue),
+                        leading: const CircleAvatar(
+                          backgroundColor: Color.fromARGB(255, 9, 129, 241),
+                          child: Icon(
+                            Icons.location_pin,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -108,8 +118,14 @@ class Info extends StatelessWidget {
                                   builder: (context) =>
                                       UserDistanceProfilePage_Jaintapur()));
                         },
-                        leading: const Icon(Icons.location_pin,
-                            size: 40, color: Colors.blue),
+                        leading: const CircleAvatar(
+                          backgroundColor: Color.fromARGB(255, 9, 129, 241),
+                          child: Icon(
+                            Icons.location_pin,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                        ),
                       ),
                     ),
                   ],

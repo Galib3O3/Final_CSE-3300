@@ -3,9 +3,9 @@ import '../../SunamganjDistancePage/dirai-sunamganj-volunteer.dart';
 import '../../SunamganjDistancePage/tahirpur-sunamganj-volunter.dart';
 import '../../SunamganjDistancePage/userDistanceProfileSunamganj.dart';
 
-class Info1 extends StatelessWidget {
+class SunamgonjDistrict extends StatelessWidget {
   final data;
-  Info1(this.data);
+  SunamgonjDistrict(this.data);
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +33,9 @@ class Info1 extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      UserDistanceProfilePage_sunamganj()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  UserDistanceProfilePage_sunamganj()));
                         },
                         leading: const CircleAvatar(
                           backgroundColor: Color.fromARGB(255, 9, 129, 241),
@@ -67,10 +66,9 @@ class Info1 extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      UserDistanceProfilePage_dirai()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  UserDistanceProfilePage_dirai()));
                         },
                         leading: const CircleAvatar(
                           backgroundColor: Color.fromARGB(255, 9, 129, 241),
@@ -102,10 +100,9 @@ class Info1 extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      UserDistanceProfilePage_tahirpur()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  UserDistanceProfilePage_tahirpur()));
                         },
                         //
                         // leading: Icon(Icons.location_pin,

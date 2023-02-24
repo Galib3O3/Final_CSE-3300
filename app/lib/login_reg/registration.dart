@@ -259,7 +259,6 @@ class _regscreenState extends State<regscreen> {
             color: Colors.blue,
           ),
           onPressed: () {
-            //go to login section
             Navigator.of(context).pop();
           },
         ),

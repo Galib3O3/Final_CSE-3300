@@ -28,7 +28,7 @@ class _UserDistanceProfilePage_CompanigonjState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("USER"),
+        title: Text("user distance"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -96,6 +96,7 @@ class _UserDistanceProfilePage_CompanigonjState
                               ),
                               Icon(
                                 Icons.man_2_sharp,
+                                color: Colors.blue,
                                 size: 64,
                               ),
                               Text("Sadapathor"),
@@ -150,6 +151,7 @@ class _UserDistanceProfilePage_CompanigonjState
                                 ),
                                 Icon(
                                   Icons.volunteer_activism,
+                                  color: Colors.blue,
                                   size: 60,
                                 ),
                                 SizedBox(
@@ -160,7 +162,9 @@ class _UserDistanceProfilePage_CompanigonjState
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Icon(Icons.phone),
+                                    Icon(
+                                      Icons.phone,
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -196,6 +200,7 @@ class _UserDistanceProfilePage_CompanigonjState
                               ),
                               Icon(
                                 Icons.volunteer_activism,
+                                color: Colors.blue,
                                 size: 60,
                               ),
                               SizedBox(

@@ -1,7 +1,5 @@
 import 'dart:ui';
-
 import 'package:app/user_distance/app/views/District-information/LocationAndVolunterrs/SylhetRegion.dart';
-
 import 'package:app/app/profile-pages/liveChatADH/livechat.dart';
 import 'package:app/profilepage/profile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -10,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-
 import '../../Dontaion/donation.dart';
 import '../../about_us/about_us.dart';
 import '../../function/user_func.dart';
@@ -90,7 +87,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "weather",
+                        "Weather",
                         style: TextStyle(fontSize: 18),
                       )
                     ],
@@ -202,10 +199,8 @@ class _SixProfileViewState extends State<SixProfileView> {
                     ],
                   ),
                   onTap: () {
-                    setState(() {
-                      Get.to(livecaht());
-                      //Get.to(MyHomePage(title: 'Flutter Demo Home Page'));
-                    });
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => livecaht()));
                   }),
               GestureDetector(
                   child: Column(
@@ -223,15 +218,14 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "about us",
+                        "About us",
                         style: TextStyle(fontSize: 18),
                       )
                     ],
                   ),
                   onTap: () {
-                    setState(() {
-                      Get.to(AboutusPage());
-                    });
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const AboutusPage()));
                   }),
             ],
           )),
@@ -245,43 +239,58 @@ class _SixProfileViewState extends State<SixProfileView> {
           ),
         ],
       )),
-      backgroundColor: const Color.fromARGB(248, 245, 245, 245),
+      backgroundColor: Color.fromARGB(251, 253, 253, 253),
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            UserAccountsDrawerHeader(
-              accountName:
-                  Text("${loggedUser.firstName} ${loggedUser.lastName}",
-                      style: const TextStyle(
-                        fontSize: 20,
-                      )),
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                      'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80'),
-                  fit: BoxFit.cover,
+        child: Container(
+          color: Color.fromARGB(255, 43, 152, 224),
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              UserAccountsDrawerHeader(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('img/save.png'),
+                    fit: BoxFit.cover,
+                  ),
                 ),
+                accountName:
+                    Text("${loggedUser.firstName} ${loggedUser.lastName}",
+                        style: const TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontSize: 20,
+                        )),
+                accountEmail: Text("${loggedUser.email}",
+                    style: const TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontSize: 20,
+                    )),
               ),
-              accountEmail: Text("${loggedUser.email}",
-                  style: const TextStyle(
-                    fontSize: 20,
-                  )),
-            ),
-            ListTile(
-              title: const Text('Profile '),
-              onTap: () {
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => ProfilePage()));
-              },
-            ),
-            ListTile(
-              title: const Text('Logout'),
-              onTap: () {
-                logout(context);
-              },
-            ),
-          ],
+              ListTile(
+                title: const Text(
+                  'Profile ',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => ProfilePage()));
+                },
+              ),
+              const Divider(
+                height: 1,
+                thickness: 5,
+                //color: Color.fromARGB(255, 255, 255, 255),
+              ),
+              ListTile(
+                title: const Text(
+                  'Logout',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                onTap: () {
+                  logout(context);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -290,8 +299,16 @@ class _SixProfileViewState extends State<SixProfileView> {
   Future<void> logout(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
 
+    // ignore: use_build_context_synchronously
     Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const loginscreen()));
-    Fluttertoast.showToast(msg: "Logout Successfully");
+    Fluttertoast.showToast(
+        msg: "Logout Successfully",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 3,
+        backgroundColor: Colors.orange,
+        textColor: Colors.black,
+        fontSize: 16.0);
   }
 }
