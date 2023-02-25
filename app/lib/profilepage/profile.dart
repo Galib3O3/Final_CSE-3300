@@ -226,6 +226,8 @@ class _ProfilePageState extends State<ProfilePage> {
       loggedUser = UserFunc.fromMap(value.data());
       setState(() {});
     });
+
+    print(user?.uid);
   }
 
   verifymail() async {

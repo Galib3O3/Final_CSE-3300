@@ -1,10 +1,10 @@
 class Weather {
   dynamic id;
-  dynamic? cityName;
-  dynamic? temp;
-  dynamic? wind;
-  dynamic? pressure;
-  dynamic? humidity;
+  dynamic cityName;
+  dynamic temp;
+  dynamic wind;
+  dynamic pressure;
+  dynamic humidity;
   // ignore: non_constant_identifier_names
   double? feels_like;
 

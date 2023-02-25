@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import '../views/copy-main.dart';
+import '../views/Weatherviewpage.dart';
 
 class DistrictGridPage extends StatefulWidget {
   DistrictGridPage({super.key});
@@ -81,7 +81,7 @@ class _DistrictGridPageState extends State<DistrictGridPage> {
                     ],
                   ),
                   onTap: () {
-                    Get.to(() => copyMainFile(),
+                    Get.to(() => WeatherMainPage(),
                         arguments: ["24.894930", "91.868706"]);
                   },
                 ),
@@ -107,7 +107,7 @@ class _DistrictGridPageState extends State<DistrictGridPage> {
                     ],
                   ),
                   onTap: () {
-                    Get.to(() => copyMainFile(),
+                    Get.to(() => WeatherMainPage(),
                         arguments: ["24.3840", "91.4169"]);
                   },
                 ),
@@ -133,7 +133,7 @@ class _DistrictGridPageState extends State<DistrictGridPage> {
                     ],
                   ),
                   onTap: () {
-                    Get.to(() => copyMainFile(),
+                    Get.to(() => WeatherMainPage(),
                         arguments: ["25.0662", "91.4073"]);
                   },
                 ),
@@ -160,7 +160,7 @@ class _DistrictGridPageState extends State<DistrictGridPage> {
                     ],
                   ),
                   onTap: () {
-                    Get.to(() => copyMainFile(),
+                    Get.to(() => WeatherMainPage(),
                         arguments: ["24.4843", "91.7685"]);
                   },
                 ),

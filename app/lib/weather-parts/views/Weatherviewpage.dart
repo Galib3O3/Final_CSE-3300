@@ -9,15 +9,15 @@ import '../weather-views-widgtes/current_weather_get.dart';
 import 'carefulMessageShow.dart';
 
 // ignore: camel_case_types
-class copyMainFile extends StatefulWidget {
-  const copyMainFile({super.key});
+class WeatherMainPage extends StatefulWidget {
+  const WeatherMainPage({super.key});
 
   @override
-  State<copyMainFile> createState() => _copyMainFileState();
+  State<WeatherMainPage> createState() => _WeatherMainPageState();
 }
 
 // ignore: camel_case_types
-class _copyMainFileState extends State<copyMainFile> {
+class _WeatherMainPageState extends State<WeatherMainPage> {
   List<String> argss = Get.arguments;
   var lat, lon;
 
