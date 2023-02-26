@@ -3,8 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'Dontaion/donation.dart';
-
-
+import 'about_us/about_us.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding();
@@ -24,6 +23,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const splashS());
+        home: AboutusPage());
+    //home: const splashS());
   }
 }
