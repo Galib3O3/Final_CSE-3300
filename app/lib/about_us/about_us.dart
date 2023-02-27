@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vector_math/vector_math.dart' as math;
 
 String history = "\nOUR app is mainly divided into 4 parts here"
     "\n\n 1. Careful Message based on Weather\n"
@@ -66,18 +67,42 @@ class AboutusPage extends StatelessWidget {
                     width: 120,
                   ),
                 ),
-                customeButton(context),
+                SizedBox(
+                  height: 30,
+                ),
+                Center(child: Text(" D E S C R I P T I  O N ")),
+                SizedBox(
+                  height: 20,
+                ),
                 Container(
                   margin: EdgeInsets.all(10),
                   padding: EdgeInsets.all(0),
                   height: 200,
                   width: 320,
-                  // color: Color.fromARGB(255, 7, 181, 255),
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 111, 210, 189),
-                      border: Border.all(
-                          color: Color.fromARGB(255, 36, 11, 20), width: 2),
-                      borderRadius: BorderRadius.circular(10)),
+                    gradient: LinearGradient(
+                      colors: [
+                        Color.fromARGB(255, 59, 178, 234),
+                        Color.fromARGB(255, 35, 186, 213),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    border: Border.all(
+                      color: Color.fromARGB(255, 36, 11, 20),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color:
+                            Color.fromARGB(255, 230, 219, 219).withOpacity(0.2),
+                        spreadRadius: 3,
+                        blurRadius: 5,
+                        offset: Offset(1, 3),
+                      ),
+                    ],
+                  ),
                   child: Column(
                     children: [
                       Text(
@@ -90,13 +115,46 @@ class AboutusPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                    child: Image.asset(
-                  'assets/contibutor.png',
-                  fit: BoxFit.cover,
-                  height: 200,
-                  width: 320,
-                )),
+                SizedBox(
+                  height: 40,
+                ),
+                Center(
+                  child: InkWell(
+                    child: Text(" C O N T I B U T O R S  "),
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Dialog(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: SingleChildScrollView(
+                              child: Container(
+                                padding: EdgeInsets.all(16.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Container(
+                                        child: Image.asset(
+                                      'assets/contibutor.png',
+                                      fit: BoxFit.cover,
+                                      height: 200,
+                                      width: 320,
+                                    )),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
               ],
             ),
           ),
@@ -107,14 +165,23 @@ class AboutusPage extends StatelessWidget {
 }
 
 Widget customeButton(BuildContext context) {
-  return ElevatedButton(
+  return TextButton(
+    style: TextButton.styleFrom(
+      backgroundColor: Colors.blue,
+      primary: Colors.white,
+      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      textStyle: TextStyle(fontSize: 18.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+    ),
     onPressed: () {
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return Dialog(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: BorderRadius.circular(15.0),
             ),
             child: SingleChildScrollView(
               child: Container(
@@ -126,28 +193,37 @@ Widget customeButton(BuildContext context) {
                       history,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20.0,
+                        fontSize: 24.0,
+                        color: Colors.blue,
                       ),
                     ),
+                    SizedBox(height: 10.0),
                     Text(
                       'Dialog Title',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20.0,
+                        color: Colors.black87,
                       ),
                     ),
+                    SizedBox(height: 10.0),
                     Text(
-                      'Dialog Title',
+                      'Dialog Subtitle',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20.0,
+                        fontSize: 16.0,
+                        color: Colors.grey[600],
                       ),
                     ),
+                    SizedBox(height: 20.0),
                     Text(
                       'Dialog Content',
-                      style: TextStyle(fontSize: 16.0),
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.black87,
+                      ),
                     ),
-                    SizedBox(height: 16.0),
+                    SizedBox(height: 20.0),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop();
@@ -163,6 +239,65 @@ Widget customeButton(BuildContext context) {
       );
     },
     child: Text('More Info'),
+  );
+}
+
+Widget customeContibutors(BuildContext context) {
+  return Dialog(
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(15.0),
+    ),
+    child: SingleChildScrollView(
+      child: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              history,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 24.0,
+                color: Colors.blue,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              'Dialog Title',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20.0,
+                color: Colors.black87,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              'Dialog Subtitle',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16.0,
+                color: Colors.grey[600],
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Text(
+              'Dialog Content',
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.black87,
+              ),
+            ),
+            SizedBox(height: 20.0),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            ),
+          ],
+        ),
+      ),
+    ),
   );
 }
 

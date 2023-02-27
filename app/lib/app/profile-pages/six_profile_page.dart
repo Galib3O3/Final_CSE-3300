@@ -14,6 +14,7 @@ import '../../function/user_func.dart';
 import '../../login_reg/login.dart';
 import '../../shelter/shelter_page_view.dart';
 import '../../weather-parts/app/district-profile_page_sylhet.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
 
 class SixProfileView extends StatefulWidget {
   const SixProfileView({super.key});
@@ -47,10 +48,21 @@ class _SixProfileViewState extends State<SixProfileView> {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: () {
-                SystemNavigator.pop();
-              },
-              icon: Icon(Icons.exit_to_app))
+            onPressed: () {
+              AwesomeDialog(
+                context: context,
+                dialogType: DialogType.question,
+                animType: AnimType.rightSlide,
+                title: 'LOG OUT',
+                desc: 'Are you sure you want to LOG OUT',
+                btnCancelOnPress: () {},
+                btnOkOnPress: () {
+                  SystemNavigator.pop();
+                },
+              ).show();
+            },
+            icon: const Icon(Icons.exit_to_app_outlined),
+          ),
         ],
         title: const Center(child: Text("HOME PAGE")),
         backgroundColor: Colors.blueAccent,
