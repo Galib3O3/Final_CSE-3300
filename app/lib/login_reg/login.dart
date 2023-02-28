@@ -41,7 +41,7 @@ class _loginscreenState extends State<loginscreen> {
       decoration: InputDecoration(
           prefixIcon: Icon(Icons.mail),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          labelText: "Email",
+          labelText:tEmail,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )),
@@ -61,7 +61,7 @@ class _loginscreenState extends State<loginscreen> {
           ),
           //suffixIcon: ,
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          labelText: "Password",
+          labelText: tpass,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )),
@@ -78,8 +78,8 @@ class _loginscreenState extends State<loginscreen> {
           SignIn(emailController.text, passwordController.text);
           CircularProgressIndicator();
         },
-        child: Text(
-          "Login",
+        child: const Text(
+          Tlogin,
           style: TextStyle(
               fontSize: 20,
               color: Color.fromARGB(255, 255, 255, 255),
@@ -137,7 +137,7 @@ class _loginscreenState extends State<loginscreen> {
                             );
                           },
                           child: Text(
-                            "Forget Password",
+                            TForgetPassword,
                             style: TextStyle(
                                 color: Colors.blueAccent[400],
                                 fontWeight: FontWeight.w600,

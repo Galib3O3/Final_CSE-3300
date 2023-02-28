@@ -15,11 +15,11 @@ class WelcomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       body: Container(
-        padding: EdgeInsets.all(tDefaultSize),
+        padding: const EdgeInsets.all(tDefaultSize),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image(
+            const Image(
                 image: AssetImage(
               welcomeImage,
             )),
@@ -35,16 +35,17 @@ class WelcomeScreen extends StatelessWidget {
               Expanded(
                 child: OutlinedButton(
                     onPressed: () {
-                      Get.to((loginscreen()));
+                      Get.to((const loginscreen()));
                     },
                     style: OutlinedButton.styleFrom(
-                        shape: RoundedRectangleBorder(),
+                        shape: const RoundedRectangleBorder(),
                         foregroundColor: secondary_color,
-                        side: BorderSide(color: secondary_color),
-                        padding: EdgeInsets.symmetric(vertical: buttonSize)),
-                    child: Text(loginT.toUpperCase())),
+                        side: const BorderSide(color: secondary_color),
+                        padding:
+                            const EdgeInsets.symmetric(vertical: buttonSize)),
+                    child: Text(Tlogin.toUpperCase())),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Expanded(
@@ -54,11 +55,12 @@ class WelcomeScreen extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                         elevation: 1,
-                        shape: RoundedRectangleBorder(),
+                        shape: const RoundedRectangleBorder(),
                         foregroundColor: white_color,
                         backgroundColor: secondary_color,
-                        side: BorderSide(color: white_color),
-                        padding: EdgeInsets.symmetric(vertical: buttonSize)),
+                        side: const BorderSide(color: white_color),
+                        padding:
+                            const EdgeInsets.symmetric(vertical: buttonSize)),
                     child: Text(SignupT.toUpperCase())),
               )
             ]),

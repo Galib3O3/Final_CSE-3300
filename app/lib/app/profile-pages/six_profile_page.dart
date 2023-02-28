@@ -10,6 +10,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import '../../Dontaion/donation.dart';
 import '../../about_us/about_us.dart';
+import '../../constants/text.dart';
 import '../../function/user_func.dart';
 import '../../login_reg/login.dart';
 import '../../shelter/shelter_page_view.dart';
@@ -53,8 +54,8 @@ class _SixProfileViewState extends State<SixProfileView> {
                 context: context,
                 dialogType: DialogType.question,
                 animType: AnimType.rightSlide,
-                title: 'LOG OUT',
-                desc: 'Are you sure you want to LOG OUT',
+                title: ExitMessage,
+                desc: decsTitle,
                 btnCancelOnPress: () {},
                 btnOkOnPress: () {
                   SystemNavigator.pop();
@@ -99,7 +100,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "Weather",
+                        Tweather,
                         style: TextStyle(fontSize: 18),
                       )
                     ],
@@ -123,7 +124,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "Shelter",
+                        Tshelter,
                         style: TextStyle(fontSize: 18),
                       )
                     ],
@@ -153,7 +154,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "Volunteer",
+                        Tvolunteer,
                         style: TextStyle(fontSize: 18),
                       )
                     ],
@@ -179,7 +180,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "Donation",
+                        Tdonation,
                         style: TextStyle(fontSize: 18),
                       )
                     ],
@@ -205,7 +206,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "Live Chat",
+                        Tlivechat,
                         style: TextStyle(fontSize: 18),
                       )
                     ],
@@ -230,7 +231,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "About us",
+                        Taboutus,
                         style: TextStyle(fontSize: 18),
                       )
                     ],
