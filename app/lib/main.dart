@@ -24,6 +24,6 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         // home: AboutusPage());
-        home: const splashS());
+        home: SplashScreen());
   }
 }
