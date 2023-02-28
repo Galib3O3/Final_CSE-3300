@@ -25,7 +25,12 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
+<<<<<<< HEAD
        
         home: SixProfileView());
+=======
+        // home: AboutusPage());
+        home: SplashScreen());
+>>>>>>> 065bb8b6fe6cc8d6a1856c825ec65d35a817801a
   }
 }

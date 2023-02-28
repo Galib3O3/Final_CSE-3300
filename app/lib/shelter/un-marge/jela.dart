@@ -1,5 +1,9 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+<<<<<<< HEAD
 //import 'package:dart_design/user-form/name_field.dart';
+=======
+
+>>>>>>> 065bb8b6fe6cc8d6a1856c825ec65d35a817801a
 import 'package:flutter/material.dart';
 
 import 'name_field.dart';
@@ -23,7 +27,7 @@ class _jelaState extends State<jela> {
             ),
             GestureDetector(
               child: Container(
-                height: 40,
+                height: 100,
                 width: 150,
                 child: Center(
                   child: Text(
@@ -48,7 +52,7 @@ class _jelaState extends State<jela> {
             ),
             GestureDetector(
               child: Container(
-                height: 40,
+                height: 100,
                 width: 150,
                 child: Center(
                   child: Text(
