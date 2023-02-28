@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../constants/images.dart';
 
-class welcomeS extends StatelessWidget {
-  const welcomeS({super.key});
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class welcomeS extends StatelessWidget {
               Expanded(
                 child: ElevatedButton(
                     onPressed: () {
-                      Get.to(regscreen());
+                      Get.to(RegScreen());
                     },
                     style: ElevatedButton.styleFrom(
                         elevation: 1,

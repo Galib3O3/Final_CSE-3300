@@ -5,14 +5,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class regscreen extends StatefulWidget {
-  const regscreen({super.key});
+class RegScreen extends StatefulWidget {
+  const RegScreen({super.key});
 
   @override
-  State<regscreen> createState() => _regscreenState();
+  State<RegScreen> createState() => _RegScreenState();
 }
 
-class _regscreenState extends State<regscreen> {
+class _RegScreenState extends State<RegScreen> {
   final _auth = FirebaseAuth.instance;
 
   final _formkey = GlobalKey<FormState>();
@@ -354,7 +354,7 @@ class _regscreenState extends State<regscreen> {
 
     await firebaseFirestore
         .collection("users")
-        .doc(Users.uid)
+        .doc(Users.email)
         .set(userFunc.toMap());
     Fluttertoast.showToast(
         msg: "Registration Successfully completed",

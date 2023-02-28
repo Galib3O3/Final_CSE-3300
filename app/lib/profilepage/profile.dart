@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../updateData/UpdateData.dart';
 import '../function/user_func.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -87,32 +88,6 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(
               height: 20,
             ),
-            // Container(
-            //   decoration: BoxDecoration(
-            //       color: const Color.fromARGB(255, 161, 218, 226),
-            //       borderRadius: BorderRadius.circular(20.0),
-            //       border: Border.all(color: Colors.black)),
-            //   width: 350,
-            //   height: 40,
-            //   child: ListView(scrollDirection: Axis.horizontal, children: [
-            //     Row(
-            //       mainAxisAlignment: MainAxisAlignment.center,
-            //       children: [
-            //         const Text(
-            //           " Email :   ",
-            //           style: TextStyle(fontSize: 20),
-            //         ),
-            //         Text("${loggedUser.email}",
-            //             style: const TextStyle(
-            //               fontSize: 20,
-            //             )),
-            //       ],
-            //     ),
-            //   ]),
-            // ),
-            // const SizedBox(
-            //   height: 60,
-            // ),
             Container(
               width: 350,
               height: 60,
@@ -154,7 +129,6 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(
               height: 20,
             ),
-
             Container(
               decoration: BoxDecoration(
                   color: Color.fromARGB(253, 25, 115, 205),
@@ -206,6 +180,29 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
             ),
+            const SizedBox(height: 20),
+            Container(
+              child: Center(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const updatereq()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 156, 64, 255),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        elevation: 15.0,
+                      ),
+                      child: const Text(
+                        "Update Request",
+                        style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic),
+                      ))),
+            ),
             const SizedBox(
               height: 150,
             ),
@@ -220,14 +217,13 @@ class _ProfilePageState extends State<ProfilePage> {
     super.initState();
     FirebaseFirestore.instance
         .collection("users")
-        .doc(user!.uid)
+        .doc(user!.email)
         .get()
         .then((value) {
       loggedUser = UserFunc.fromMap(value.data());
       setState(() {});
     });
 
-    print(user?.uid);
   }
 
   verifymail() async {

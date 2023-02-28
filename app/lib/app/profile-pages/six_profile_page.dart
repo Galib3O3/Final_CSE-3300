@@ -33,7 +33,7 @@ class _SixProfileViewState extends State<SixProfileView> {
     super.initState();
     FirebaseFirestore.instance
         .collection("users")
-        .doc(user!.uid)
+        .doc(user!.email)
         .get()
         .then((value) {
       loggedUser = UserFunc.fromMap(value.data());
@@ -265,26 +265,29 @@ class _SixProfileViewState extends State<SixProfileView> {
                       fontSize: 20,
                     )),
               ),
+              Divider(
+                height: 10,
+                thickness: 20,
+              ),
               ListTile(
                 title: const Text(
                   'Profile ',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 29, 29, 29), fontSize: 20),
                 ),
+                leading: const Icon(Icons.account_box_rounded),
                 onTap: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => ProfilePage()));
                 },
               ),
-              const Divider(
-                height: 1,
-                thickness: 5,
-                //color: Color.fromARGB(255, 255, 255, 255),
-              ),
               ListTile(
                 title: const Text(
                   'Logout',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 29, 29, 29), fontSize: 20),
                 ),
+                leading: const Icon(Icons.logout),
                 onTap: () {
                   logout(context);
                 },

@@ -1,10 +1,10 @@
 import 'package:app/pages/splash.dart';
+import 'package:app/profilepage/profile.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'Dontaion/donation.dart';
-
-
+import 'optional/SylhetRegion.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding();
@@ -24,6 +24,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const splashS());
+        home: const SplashScreen());
   }
 }

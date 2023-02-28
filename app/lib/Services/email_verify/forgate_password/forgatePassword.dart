@@ -19,47 +19,57 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('Forgot Password')),
-        backgroundColor: Colors.blueAccent,
+        elevation: 0,
+        //title: Center(child:  Text('Forgot Password')),
+        backgroundColor: Colors.transparent,
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
             color: Color.fromARGB(255, 0, 0, 0),
           ),
           onPressed: () {
-            //go to login section
             Navigator.of(context).pop();
           },
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
+        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 350,
+                height: 250,
                 child: Image.asset(
                   "img/sv.png",
                   fit: BoxFit.contain,
                 ),
               ),
-              SizedBox(height: 40),
-              Text("Enter Your Logged mail"),
-              SizedBox(height: 30),
+              const SizedBox(
+                height: 40,
+              ),
+              const Text(
+                "Forgot Password",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                "Enter Your Login mail",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 15),
               TextFormField(
                 controller: emailcontroller,
                 decoration: InputDecoration(
-                    hintText: "Email",
-                    prefixIcon: Icon(Icons.email),
+                    labelText: "Email",
+                    prefixIcon: const Icon(Icons.email),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     )),
               ),
-              SizedBox(
-                height: 40,
+              const SizedBox(
+                height: 30,
               ),
               ElevatedButton(
                 onPressed: () {
@@ -75,17 +85,18 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         backgroundColor: Colors.green,
                         textColor: Colors.white,
                         fontSize: 16.0);
-                    Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => loginscreen()));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => const loginscreen()));
                   }).catchError((err) {
-                    Fluttertoast.showToast(msg: err!.message);
+                    Fluttertoast.showToast(msg: "Please enter your mail ");
                   });
                 },
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.blueAccent,
-                    padding: EdgeInsets.symmetric(horizontal: 60, vertical: 10),
-                    textStyle:
-                        TextStyle(fontSize: 50, fontWeight: FontWeight.bold)),
+                    primary: const Color.fromARGB(255, 40, 51, 85),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 60, vertical: 10),
+                    textStyle: const TextStyle(
+                        fontSize: 50, fontWeight: FontWeight.bold)),
                 child: const Text(
                   "Reset",
                   style: TextStyle(
