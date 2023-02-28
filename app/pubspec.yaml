@@ -47,6 +47,7 @@ dependencies:
   pull_to_refresh: ^2.0.0
   percent_indicator: ^4.2.2
   carousel_slider: ^4.2.1
+  awesome_dialog: ^3.0.2
   
 flutter_icons:
   image_path: "img/sv.png"
