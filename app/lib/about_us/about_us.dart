@@ -186,52 +186,7 @@ Widget customeButton(BuildContext context) {
             child: SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.all(16.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      history,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24.0,
-                        color: Colors.blue,
-                      ),
-                    ),
-                    SizedBox(height: 10.0),
-                    Text(
-                      'Dialog Title',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20.0,
-                        color: Colors.black87,
-                      ),
-                    ),
-                    SizedBox(height: 10.0),
-                    Text(
-                      'Dialog Subtitle',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.0,
-                        color: Colors.grey[600],
-                      ),
-                    ),
-                    SizedBox(height: 20.0),
-                    Text(
-                      'Dialog Content',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.black87,
-                      ),
-                    ),
-                    SizedBox(height: 20.0),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Text('Close'),
-                    ),
-                  ],
-                ),
+                child: customeContibutors(context),
               ),
             ),
           );

@@ -1,3 +1,4 @@
+import 'package:app/app/profile-pages/liveChatADH/adhoc_page.dart';
 import 'package:flutter/material.dart';
 
 class livecaht extends StatelessWidget {
@@ -39,8 +40,9 @@ class livecaht extends StatelessWidget {
                 height: 20,
               ),
               Container(
-                height: 200,
+                height: 180,
                 width: 340,
+                padding: EdgeInsets.all(15),
                 color: Color.fromARGB(237, 93, 205, 225),
                 child: SingleChildScrollView(
                   child: Column(
@@ -105,7 +107,8 @@ class livecaht extends StatelessWidget {
                   ],
                 ),
                 onTap: () {
-                  print("sajjjad");
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => AdhocPageView()));
                 },
               ),
             ],

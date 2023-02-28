@@ -58,7 +58,8 @@ class _SixProfileViewState extends State<SixProfileView> {
                 desc: 'Are you sure you want to LOG OUT',
                 btnCancelOnPress: () {},
                 btnOkOnPress: () {
-                  SystemNavigator.pop();
+                  // SystemNavigator.pop();
+                  logout(context);
                 },
               ).show();
             },
@@ -99,9 +100,11 @@ class _SixProfileViewState extends State<SixProfileView> {
                           ),
                         ),
                       ),
-                      const Text(
-                        "Weather",
-                        style: TextStyle(fontSize: 18),
+                      Center(
+                        child: const Text(
+                          "Weather",
+                          style: TextStyle(fontSize: 18),
+                        ),
                       )
                     ],
                   ),
