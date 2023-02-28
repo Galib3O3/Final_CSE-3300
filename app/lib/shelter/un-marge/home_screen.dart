@@ -25,6 +25,13 @@ class _GowainghatSchoolNameListShowState
     "Population = 480 \n Chira = 12kg \n Muri = 5kg \n Gur = 4kg"
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    dataArray = [""];
+    fetchData();
+  }
+
   Future<void> fetchData() async {
     final CollectionReference collection = firestore.collection('user');
     final QuerySnapshot querySnapshot = await collection.get();
@@ -48,13 +55,6 @@ class _GowainghatSchoolNameListShowState
   }
 
   @override
-  void initState() {
-    super.initState();
-    dataArray = [""];
-    fetchData();
-  }
-
-  @override
   Widget build(BuildContext context) {
     String valData = " ";
     return Scaffold(
@@ -67,7 +67,6 @@ class _GowainghatSchoolNameListShowState
               itemCount: dataArray.length,
               itemBuilder: (context, index) {
                 final item = dataArray[index];
-
                 if (index == 0) {
                   return ListTile(
                     title: Container(
@@ -210,54 +209,6 @@ class _GowainghatSchoolNameListShowState
                             ),
                           ),
                         );
-
-                        /// you should  design
-                        // return Dialog(
-                        //   shape: RoundedRectangleBorder(
-                        //     borderRadius: BorderRadius.circular(10.0),
-                        //   ),
-                        //   child: SingleChildScrollView(
-                        //     child: Container(
-                        //       padding: EdgeInsets.all(16.0),
-                        //       child: Column(
-                        //         mainAxisSize: MainAxisSize.min,
-                        //         children: [
-                        //           Text(
-                        //             "$item water 500",
-                        //             style: const TextStyle(
-                        //               fontWeight: FontWeight.bold,
-                        //               fontSize: 20.0,
-                        //             ),
-                        //           ),
-                        //           // ignore: prefer_const_constructors
-                        //           Text(
-                        //             "People 150",
-                        //             // ignore: prefer_const_constructors
-                        //             style: TextStyle(
-                        //               fontWeight: FontWeight.bold,
-                        //               fontSize: 20.0,
-                        //             ),
-                        //           ),
-                        //           Text(
-                        //             "$index",
-                        //             // ignore: prefer_const_constructors
-                        //             style: TextStyle(
-                        //               fontWeight: FontWeight.bold,
-                        //               fontSize: 20.0,
-                        //             ),
-                        //           ),
-                        //           SizedBox(height: 16.0),
-                        //           ElevatedButton(
-                        //             onPressed: () {
-                        //               Navigator.of(context).pop();
-                        //             },
-                        //             child: Text('Close'),
-                        //           ),
-                        //         ],
-                        //       ),
-                        //     ),
-                        //   ),
-                        // );
                       },
                     );
                   },

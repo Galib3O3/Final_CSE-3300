@@ -1,6 +1,8 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:dart_design/user-form/name_field.dart';
+
 import 'package:flutter/material.dart';
+
+import 'name_field.dart';
 
 class jela extends StatefulWidget {
   const jela({super.key});
@@ -21,7 +23,7 @@ class _jelaState extends State<jela> {
             ),
             GestureDetector(
               child: Container(
-                height: 40,
+                height: 100,
                 width: 150,
                 child: Center(
                   child: Text(
@@ -46,7 +48,7 @@ class _jelaState extends State<jela> {
             ),
             GestureDetector(
               child: Container(
-                height: 40,
+                height: 100,
                 width: 150,
                 child: Center(
                   child: Text(

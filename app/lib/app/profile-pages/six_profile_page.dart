@@ -13,6 +13,7 @@ import '../../about_us/about_us.dart';
 import '../../function/user_func.dart';
 import '../../login_reg/login.dart';
 import '../../shelter/shelter_page_view.dart';
+import '../../shelter/un-marge/jela.dart';
 import '../../weather-parts/app/district-profile_page_sylhet.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
@@ -133,7 +134,8 @@ class _SixProfileViewState extends State<SixProfileView> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SchoolWithData()),
+                            //builder: (context) => SchoolWithData()),
+                            builder: (context) => jela()),
                       );
                     });
                   }),
