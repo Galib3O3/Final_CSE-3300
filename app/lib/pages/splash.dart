@@ -5,14 +5,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class splashS extends StatefulWidget {
-  const splashS({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<splashS> createState() => _splashSState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _splashSState extends State<splashS> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
@@ -42,7 +42,7 @@ class _splashSState extends State<splashS> {
                           },
                         );
                       } else {
-                        return const welcomeS();
+                        return const WelcomeScreen();
                       }
                     },
                   )),
@@ -70,4 +70,3 @@ class _splashSState extends State<splashS> {
     );
   }
 }
-

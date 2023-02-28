@@ -28,7 +28,7 @@ class _SylhetRegionState extends State<SylhetRegion> {
           stream: firebase.snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (!snapshot.hasData) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(color: Colors.red),
               );
             }
@@ -145,6 +145,7 @@ class _SylhetRegionState extends State<SylhetRegion> {
               }).toList(),
             );
           },
-        ));
+        ),
+        );
   }
 }

@@ -10,6 +10,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import '../../Dontaion/donation.dart';
 import '../../about_us/about_us.dart';
+import '../../constants/text.dart';
 import '../../function/user_func.dart';
 import '../../login_reg/login.dart';
 import '../../shelter/shelter_page_view.dart';
@@ -22,6 +23,7 @@ class SixProfileView extends StatefulWidget {
 
   @override
   _SixProfileViewState createState() => _SixProfileViewState();
+  
 }
 
 class _SixProfileViewState extends State<SixProfileView> {
@@ -35,7 +37,7 @@ class _SixProfileViewState extends State<SixProfileView> {
     super.initState();
     FirebaseFirestore.instance
         .collection("users")
-        .doc(user!.uid)
+        .doc(user!.email)
         .get()
         .then((value) {
       loggedUser = UserFunc.fromMap(value.data());
@@ -54,8 +56,8 @@ class _SixProfileViewState extends State<SixProfileView> {
                 context: context,
                 dialogType: DialogType.question,
                 animType: AnimType.rightSlide,
-                title: 'LOG OUT',
-                desc: 'Are you sure you want to LOG OUT',
+                title: ExitMessage,
+                desc: decsTitle,
                 btnCancelOnPress: () {},
                 btnOkOnPress: () {
                   // SystemNavigator.pop();
@@ -100,11 +102,19 @@ class _SixProfileViewState extends State<SixProfileView> {
                           ),
                         ),
                       ),
+<<<<<<< .mine
                       Center(
                         child: const Text(
                           "Weather",
                           style: TextStyle(fontSize: 18),
                         ),
+=======
+                      const Text(
+                        Tweather,
+                        style: TextStyle(fontSize: 18),
+
+
+>>>>>>> .theirs
                       )
                     ],
                   ),
@@ -127,7 +137,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "Shelter",
+                        Tshelter,
                         style: TextStyle(fontSize: 18),
                       )
                     ],
@@ -158,7 +168,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "Volunteer",
+                        Tvolunteer,
                         style: TextStyle(fontSize: 18),
                       )
                     ],
@@ -184,7 +194,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "Donation",
+                        Tdonation,
                         style: TextStyle(fontSize: 18),
                       )
                     ],
@@ -210,7 +220,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "Live Chat",
+                        Tlivechat,
                         style: TextStyle(fontSize: 18),
                       )
                     ],
@@ -235,7 +245,7 @@ class _SixProfileViewState extends State<SixProfileView> {
                         ),
                       ),
                       const Text(
-                        "About us",
+                        Taboutus,
                         style: TextStyle(fontSize: 18),
                       )
                     ],
@@ -282,26 +292,29 @@ class _SixProfileViewState extends State<SixProfileView> {
                       fontSize: 20,
                     )),
               ),
+              Divider(
+                height: 10,
+                thickness: 20,
+              ),
               ListTile(
                 title: const Text(
                   'Profile ',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 29, 29, 29), fontSize: 20),
                 ),
+                leading: const Icon(Icons.account_box_rounded),
                 onTap: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => ProfilePage()));
                 },
               ),
-              const Divider(
-                height: 1,
-                thickness: 5,
-                //color: Color.fromARGB(255, 255, 255, 255),
-              ),
               ListTile(
                 title: const Text(
                   'Logout',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 29, 29, 29), fontSize: 20),
                 ),
+                leading: const Icon(Icons.logout),
                 onTap: () {
                   logout(context);
                 },

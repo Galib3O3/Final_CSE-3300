@@ -1,4 +1,6 @@
+import 'package:app/app/profile-pages/six_profile_page.dart';
 import 'package:app/pages/splash.dart';
+import 'package:app/profilepage/profile.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,7 +25,12 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
+<<<<<<< HEAD
+       
+        home: SixProfileView());
+=======
         // home: AboutusPage());
         home: splashS());
+>>>>>>> 065bb8b6fe6cc8d6a1856c825ec65d35a817801a
   }
 }

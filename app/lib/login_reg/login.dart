@@ -29,6 +29,7 @@ class _loginscreenState extends State<loginscreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     final eField = TextFormField(
       autofocus: false,
       controller: emailController,
@@ -40,7 +41,7 @@ class _loginscreenState extends State<loginscreen> {
       decoration: InputDecoration(
           prefixIcon: Icon(Icons.mail),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          labelText: "Email",
+          labelText:tEmail,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )),
@@ -60,7 +61,7 @@ class _loginscreenState extends State<loginscreen> {
           ),
           //suffixIcon: ,
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          labelText: "Password",
+          labelText: tpass,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )),
@@ -77,8 +78,8 @@ class _loginscreenState extends State<loginscreen> {
           SignIn(emailController.text, passwordController.text);
           CircularProgressIndicator();
         },
-        child: Text(
-          "Login",
+        child: const Text(
+          Tlogin,
           style: TextStyle(
               fontSize: 20,
               color: Color.fromARGB(255, 255, 255, 255),
@@ -111,7 +112,7 @@ class _loginscreenState extends State<loginscreen> {
                       height: 45,
                     ),
                     eField,
-                   const SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
                     pField,
@@ -119,10 +120,10 @@ class _loginscreenState extends State<loginscreen> {
                       height: 35,
                     ),
                     loginBtn,
-                   const SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
-                  const  SizedBox(height: 25),
+                    const SizedBox(height: 25),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
@@ -136,7 +137,7 @@ class _loginscreenState extends State<loginscreen> {
                             );
                           },
                           child: Text(
-                            "Forget Password",
+                            TForgetPassword,
                             style: TextStyle(
                                 color: Colors.blueAccent[400],
                                 fontWeight: FontWeight.w600,
@@ -153,7 +154,7 @@ class _loginscreenState extends State<loginscreen> {
                       children: [
                         TextButton(
                             onPressed: () {
-                              Get.to(regscreen());
+                              Get.to(RegScreen());
                             },
                             child: Text.rich(
                               TextSpan(
@@ -201,10 +202,10 @@ class _loginscreenState extends State<loginscreen> {
   }
 
   //login
-  Future<void> SignIn(String email, String Pass) async {
+  Future<void> SignIn(String email, String Password) async {
     if (_formkey.currentState!.validate()) {
       await _auth
-          .signInWithEmailAndPassword(email: email, password: Pass)
+          .signInWithEmailAndPassword(email: email, password: Password)
           .then((uid) => {
                 Fluttertoast.showToast(
                     msg: "Congratulations Login Successfully",
@@ -214,8 +215,8 @@ class _loginscreenState extends State<loginscreen> {
                     backgroundColor: Colors.green,
                     textColor: Colors.white,
                     fontSize: 16.0),
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) =>const SixProfileView())),
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => const SixProfileView())),
                 // Get.to(home(), binding: null),
               })
           .catchError((err) {
