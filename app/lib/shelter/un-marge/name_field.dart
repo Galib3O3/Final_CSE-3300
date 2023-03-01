@@ -1,12 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-<<<<<<< HEAD
-//import 'package:dart_design/user-form/hs_sylhet_list.dart';
-=======
->>>>>>> 065bb8b6fe6cc8d6a1856c825ec65d35a817801a
+import 'package:dart_design/user-form/hs_sylhet_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'home_screen.dart';
-import 'hs_sylhet_list.dart';
 
 int indexPick = 1;
 
@@ -57,19 +53,11 @@ class _namefieldState extends State<namefield> {
                     if (name.isEmpty) {
                       return ListTile(
                           onTap: () {
-                            // print("CURRENT INDEX $index");
-
                             setState(() {
                               indexPick = index;
                             });
 
                             DynamicPageChangeHelper(indexPick, context);
-
-                            // setState(() {
-                            //   indexPick = 1;
-                            // });
-
-                            // showAlrtMessage(context);
                           },
                           title: Text(
                             data['name'],
@@ -124,11 +112,6 @@ class _namefieldState extends State<namefield> {
                           data['noShelter'],
                           maxLines: 1,
                         ),
-                        // ignore: prefer_const_constructors
-                        // leading: CircleAvatar(
-                        //   backgroundColor: Color.fromARGB(255, 79, 106, 255),
-                        //   radius: 30,
-                        // )
                       );
                     }
                     return Container();
@@ -155,6 +138,24 @@ Widget DynamicPageChangeHelper(var index, BuildContext context) {
         builder: (context) => SylhetSchoolNameListShow(),
       ),
     );
+  } else if (index == 1) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Data is pending'),
+          content: Text('Update soon.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
   }
   return Scaffold(
       body: Container(
@@ -162,50 +163,4 @@ Widget DynamicPageChangeHelper(var index, BuildContext context) {
     width: 123,
     color: Colors.red,
   ));
-}
-
-Widget showAlrtMessage(BuildContext context) {
-  return Dialog(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10.0),
-    ),
-    child: SingleChildScrollView(
-      child: Container(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              "sfda",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0,
-              ),
-            ),
-            Text(
-              "People 150",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0,
-              ),
-            ),
-            Text(
-              "sdaf",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0,
-              ),
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text('Close'),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 }
